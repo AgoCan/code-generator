@@ -1,0 +1,30 @@
+#!/bin/bash
+log(){
+    echo -e "[debug] `date "+%Y-%m-%d %H:%M:%S"` - $1 "
+}
+
+log_green(){
+    echo -e "\033[32m[info] `date "+%Y-%m-%d %H:%M:%S"` - $1 \033[0m"
+}
+
+log_warn(){
+    echo -e "\033[33m[warn] `date "+%Y-%m-%d %H:%M:%S"` - $1 \033[0m"
+}
+
+log_err(){
+    echo -e "\033[31m[error] `date "+%Y-%m-%d %H:%M:%S"` - $1 \033[0m"
+}
+
+log_blank(){
+    echo -e "\n"
+}
+
+function check_error(){
+    error=$1
+    message=${@:2}
+    if [[ $error != 0 ]]
+    then
+        log_err "$message"
+        exit 1
+    fi
+}

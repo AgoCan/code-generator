@@ -1,0 +1,36 @@
+#!/bin/bash
+
+BASH_NAME=$0
+SCRIPT_DIR=$(cd $(dirname ${BASH_SOURCE[0]}); pwd)
+
+#Load common file
+source ${SCRIPT_DIR}/utils/_common.sh
+
+#Load env file
+source ${SCRIPT_DIR}/config/config.sh
+
+#Load user config 
+source ${SCRIPT_DIR}/config/config.ini
+
+####### 根据环境设置变量 #######
+source ${SCRIPT_DIR}/config/set_config.sh
+set_contig
+
+#Load inventory 
+source ${SCRIPT_DIR}/utils/_gen_inventory_file.sh
+
+function ansible_script(){
+    log_green "start change all application."
+    ansible-playbook -i inventory playbooks/all.yml --become
+    return $?
+}
+
+function main(){
+    log_green "create inventory."
+    gen_inventory_info
+    
+    log_green "excute ansible."
+    ansible_script
+}
+
+main
