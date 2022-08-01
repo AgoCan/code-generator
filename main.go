@@ -7,6 +7,7 @@ import (
 	"github.com/agocan/code-generator/config"
 	"github.com/agocan/code-generator/generator"
 	"github.com/agocan/code-generator/generator/ansible"
+	"github.com/agocan/code-generator/generator/gitbook"
 )
 
 func run(files map[string]string, dirs []string) {
@@ -31,6 +32,8 @@ func main() {
 	generator.Init()
 	if *config.Item == "ansible" {
 		run(ansible.Files, ansible.Dirs)
+	} else if *config.Item == "gitbook" {
+		run(gitbook.Files, gitbook.Dirs)
 	} else {
 		fmt.Printf("还不支持%v生成器\n", *config.Item)
 	}
