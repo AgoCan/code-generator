@@ -8,11 +8,12 @@ import (
 
 // DirGenerator 目录生成器
 type DirGenerator struct {
+	Dirs []string
 }
 
 // Run 运行生成器
 func (d *DirGenerator) Run(opt *Option) (err error) {
-	for _, dir := range opt.Dirs {
+	for _, dir := range d.Dirs {
 		fullDir := path.Join(opt.AbsProjectPath, dir)
 		err = os.MkdirAll(fullDir, 0755)
 		if err != nil {

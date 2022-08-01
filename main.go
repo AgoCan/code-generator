@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"os"
 	"path"
 
 	"github.com/agocan/code-generator/config"
@@ -15,19 +14,15 @@ func run(files map[string]string, dirs []string) {
 	opt := generator.Option{
 		AbsProjectPath: config.AbsProjectPath,
 		Title:          *config.Title,
-		Dirs:           dirs,
 	}
 	opt.AbsProjectPath = path.Join(*config.ProjectPath, *config.Title)
 	var dirGen generator.DirGenerator
-	err := dirGen.Run(&opt)
-	if err != nil {
-		fmt.Printf("create dirs err: %v", err)
-		os.Exit(1)
-	}
+	dirGen.Dirs = dirs
 	var fileGen generator.FileGenerator
 	fileGen.Files = files
-	// 注册
-	generator.Register("files", &fileGen)
+	// 注册，按顺序来进行添加，先创建目录，再创建文件
+	generator.Register(&dirGen)
+	generator.Register(&fileGen)
 	generator.RunGenerator(&opt)
 }
 

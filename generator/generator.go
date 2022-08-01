@@ -16,10 +16,10 @@ type Option struct {
 
 // GeneratorMgr 生成器管理
 type GeneratorMgr struct {
-	genMap map[string]Generator
+	genMap []Generator
 }
 
-var genMgr *GeneratorMgr
+var GenMgr GeneratorMgr
 
 // Generator 生成器接口
 type Generator interface {
@@ -29,20 +29,15 @@ type Generator interface {
 
 // init 初始化
 func Init() {
-	genMgr = &GeneratorMgr{
-		genMap: make(map[string]Generator),
+	GenMgr = GeneratorMgr{
+		genMap: []Generator{},
 	}
 }
 
 // Register 把生成器都注册到map中，然后轮询执行
-func Register(name string, gen Generator) (err error) {
-	_, ok := genMgr.genMap[name]
-	if ok {
-		err = fmt.Errorf("genrator %v exits", name)
-		return err
-	}
-	genMgr.genMap[name] = gen
-	return nil
+// 之前是map的方式，现在改成切片，切片就是有序，而map是无序的
+func Register(gen Generator) {
+	GenMgr.genMap = append(GenMgr.genMap, gen)
 }
 
 // writeFile 使用模版文件直接写入文件
@@ -70,8 +65,7 @@ func writeFile(tmpl, filePath string, opt *Option) (err error) {
 
 // RunGenerator 运行所有已经注册的生成器
 func RunGenerator(opt *Option) (err error) {
-	for _, gen := range genMgr.genMap {
-
+	for _, gen := range GenMgr.genMap {
 		err = gen.Run(opt)
 		if err != nil {
 			fmt.Printf("err: %v", err)
