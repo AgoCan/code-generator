@@ -43,3 +43,5 @@ var Dirs = []string{
 	"utils",
 	"playbooks/roles/base/tasks",
 }
+
+var Extra = map[string]interface{}{}

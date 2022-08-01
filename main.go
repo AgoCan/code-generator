@@ -10,11 +10,12 @@ import (
 	"github.com/agocan/code-generator/generator/gitbook"
 )
 
-func run(files map[string]string, dirs []string) {
+func run(files map[string]string, dirs []string, extra map[string]interface{}) {
 
 	opt := generator.Option{
 		AbsProjectPath: config.AbsProjectPath,
 		Title:          *config.Title,
+		Extra:          extra,
 	}
 	opt.AbsProjectPath = path.Join(*config.ProjectPath, *config.Title)
 	var dirGen generator.DirGenerator
@@ -31,9 +32,9 @@ func main() {
 	config.DefaultConfig()
 	generator.Init()
 	if *config.Item == "ansible" {
-		run(ansible.Files, ansible.Dirs)
+		run(ansible.Files, ansible.Dirs, ansible.Extra)
 	} else if *config.Item == "gitbook" {
-		run(gitbook.Files, gitbook.Dirs)
+		run(gitbook.Files, gitbook.Dirs, gitbook.Extra)
 	} else {
 		fmt.Printf("还不支持%v生成器\n", *config.Item)
 	}

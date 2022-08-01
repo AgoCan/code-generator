@@ -2,6 +2,8 @@ package gitbook
 
 import (
 	_ "embed"
+
+	"github.com/agocan/code-generator/config"
 )
 
 var (
@@ -28,4 +30,16 @@ var Files = map[string]string{
 var Dirs = []string{
 	"styles",
 	"assets",
+}
+
+var Extra = map[string]interface{}{
+	"NpmInstallPlugins": config.NpmInstallPlugins,
+	"TreeBaToken":       config.TreeBaToken,
+	"GaToken":           config.GaToken,
+	"ExtraPlugins":      config.ExtraPlugins,
+	"Keywords":          config.Keywords,
+	"Description":       config.Description,
+	"Author":            config.Author,
+	"SidebarTitle":      config.SidebarTitle,
+	"SidebarLink":       config.SidebarLink,
 }

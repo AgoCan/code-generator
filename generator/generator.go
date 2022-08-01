@@ -12,6 +12,7 @@ type Option struct {
 	AbsProjectPath string
 	Title          string
 	Dirs           []string
+	Extra          map[string]interface{}
 }
 
 // GeneratorMgr 生成器管理
