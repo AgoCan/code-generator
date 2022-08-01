@@ -36,3 +36,10 @@ var Files = map[string]string{
 	"config/config.sh":                    configShContent,
 	"config/set_config.sh":                setConfigShContent,
 }
+
+var Dirs = []string{
+	"config",
+	"playbooks",
+	"utils",
+	"playbooks/roles/base/tasks",
+}

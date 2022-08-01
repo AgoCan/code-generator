@@ -11,6 +11,7 @@ type Option struct {
 	// AbsProjectPath 项目路径+项目名称
 	AbsProjectPath string
 	Title          string
+	Dirs           []string
 }
 
 // GeneratorMgr 生成器管理
