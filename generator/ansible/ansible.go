@@ -13,23 +13,23 @@ import (
 var Option generator.Option
 
 var (
-	//go:embed templates/ansible/README.md.tmpl
+	//go:embed templates/README.md.tmpl
 	readmeContent string
-	//go:embed templates/ansible/_common.sh.tmpl
+	//go:embed templates/_common.sh.tmpl
 	commonContent string
-	//go:embed templates/ansible/_gen_inventory_file.sh.tmpl
+	//go:embed templates/_gen_inventory_file.sh.tmpl
 	genInventoryFileContent string
-	//go:embed templates/ansible/all.yaml.tmpl
+	//go:embed templates/all.yaml.tmpl
 	allContent string
-	//go:embed templates/ansible/config.ini.tmpl
+	//go:embed templates/config.ini.tmpl
 	configIniContent string
-	//go:embed templates/ansible/config.sh.tmpl
+	//go:embed templates/config.sh.tmpl
 	configShContent string
-	//go:embed templates/ansible/set_config.sh.tmpl
+	//go:embed templates/set_config.sh.tmpl
 	setConfigShContent string
-	//go:embed templates/ansible/start.sh.tmpl
+	//go:embed templates/start.sh.tmpl
 	startShContent string
-	//go:embed templates/ansible/tasks.yaml.tmpl
+	//go:embed templates/tasks.yaml.tmpl
 	tasksContent string
 )
 
