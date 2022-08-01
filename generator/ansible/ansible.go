@@ -2,15 +2,7 @@ package ansible
 
 import (
 	_ "embed"
-	"fmt"
-	"os"
-	"path"
-
-	"github.com/agocan/code-generator/config"
-	"github.com/agocan/code-generator/generator"
 )
-
-var Option generator.Option
 
 var (
 	//go:embed templates/README.md.tmpl
@@ -33,7 +25,7 @@ var (
 	tasksContent string
 )
 
-var files = map[string]string{
+var Files = map[string]string{
 	"README.md":                           readmeContent,
 	"utils/_common.sh":                    commonContent,
 	"utils/_gen_inventory_file.sh":        genInventoryFileContent,
@@ -43,24 +35,4 @@ var files = map[string]string{
 	"config/config.ini":                   configIniContent,
 	"config/config.sh":                    configShContent,
 	"config/set_config.sh":                setConfigShContent,
-}
-
-func Run() {
-	Option = generator.Option{
-		AbsProjectPath: config.AbsProjectPath,
-		Title:          *config.Title,
-	}
-	Option.AbsProjectPath = path.Join(*config.ProjectPath, *config.Title)
-	var dirGen generator.DirGenerator
-	err := dirGen.Run(&Option)
-	if err != nil {
-		fmt.Printf("create dirs err: %v", err)
-		os.Exit(1)
-	}
-	var fileGen generator.FileGenerator
-	fileGen.Files = files
-	// 注册
-	generator.Register("files", &fileGen)
-
-	generator.RunGenerator(&Option)
 }
