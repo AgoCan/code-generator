@@ -9,14 +9,14 @@ import (
 // 如果跟这里一样的话，有非flag的，则需要写成函数，在初始化后进行重新赋值
 var (
 	Plugins           []string
-	TreeBaToken       = flag.String("t", "", "baidu tongji token")
-	GaToken           = flag.String("g", "", "google tongji token")
-	ExtraPlugins      = flag.String("e", "", `use "," split extra plugins.`)
-	Keywords          = flag.String("k", "keywords", "keywords")
-	Description       = flag.String("d", "description", "description")
-	Author            = flag.String("a", "author", "author")
-	SidebarTitle      = flag.String("st", "", "sidebarTitle")
-	SidebarLink       = flag.String("sl", "", "sidebarLink")
+	TreeBaToken       = flag.String("baidu", "", "gitbook: baidu tongji token")
+	GaToken           = flag.String("google", "", "gitbook: google tongji token")
+	ExtraPlugins      = flag.String("extra-plugin", "", `gitbook: use "," split extra plugins.`)
+	Keywords          = flag.String("keywords", "keywords", "gitbook: keywords")
+	Description       = flag.String("description", "description", "gitbook: description")
+	Author            = flag.String("author", "author", "gitbook: author")
+	SidebarTitle      = flag.String("sidebar-title", "", "gitbook: sidebarTitle")
+	SidebarLink       = flag.String("sidebar-link", "", "gitbook: sidebarLink")
 	NpmInstallPlugins []string
 )
 
