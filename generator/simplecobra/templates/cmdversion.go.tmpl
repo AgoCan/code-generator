@@ -1,0 +1,21 @@
+package version
+
+import (
+	"{{ .Title }}/app"
+	"github.com/spf13/cobra"
+)
+
+func VersionCmd() *cobra.Command {
+	var command = &cobra.Command{
+		Use:   "version",
+		Short: "Excute command.",
+		Long:  ``,
+		// Args:  cobra.MinimumNArgs(2),
+		Run: Version,
+	}
+	return command
+}
+
+func Version(cmd *cobra.Command, args []string) {
+	app.App()
+}

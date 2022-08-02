@@ -32,7 +32,7 @@ go run main.go -i gitbook -n gitbook-test
 go run main.go -i simple -n simple-test
 ```
 
-## 生成 简单的go代码并且通过传参方式执行 脚本框架(未做)
+## 生成 简单的go代码并且通过传参方式执行 脚本框架（需要优化）
 
 ```
 go run main.go -i simplecobra -n simplecobra-test
