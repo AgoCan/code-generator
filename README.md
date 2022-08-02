@@ -12,18 +12,6 @@ go run main.go -i ansible -n ansible-test
 go run main.go -i gitbook -n gitbook-test
 ```
 
-## 生成 简单的go代码 脚本框架
-
-```
-go run main.go -i simple -n simple-test
-```
-
-## 生成 简单的go代码并且通过传参方式执行 脚本框架(未做)
-
-```
-go run main.go -i simplecobra -n simplecobra-test
-```
-
 ### 参数
 
 |参数|描述|
@@ -37,6 +25,18 @@ go run main.go -i simplecobra -n simplecobra-test
 | `sidebar-link` | 添加侧边栏对应链接 |
 
 > 该文档默认安装插件: `-highlight`、`toggle-chapters`、`codeblock-filename`、`sectionx`、`splitter`、`-search`、`-lunr`、`search-pro`、`theme-default`、`prism`、`prism-themes`、`theme-comscore`、`include`、`favicon`、`anchors`、`tbfed-pagefooter`、`hide-element`
+
+## 生成 简单的go代码 脚本框架
+
+```
+go run main.go -i simple -n simple-test
+```
+
+## 生成 简单的go代码并且通过传参方式执行 脚本框架(未做)
+
+```
+go run main.go -i simplecobra -n simplecobra-test
+```
 
 ## 生成 简单go的http代码 脚本框架(未做)
 
