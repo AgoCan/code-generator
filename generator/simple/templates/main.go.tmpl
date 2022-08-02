@@ -1,0 +1,11 @@
+package main
+
+import (
+	"{{ .Title }}/app"
+)
+
+func main() {
+	app.NewConfig()
+	app.NewLogger()
+	app.App()
+}
