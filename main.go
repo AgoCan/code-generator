@@ -34,7 +34,8 @@ func main() {
 	if *config.Item == "ansible" {
 		run(ansible.Files, ansible.Dirs, ansible.Extra)
 	} else if *config.Item == "gitbook" {
-		run(gitbook.Files, gitbook.Dirs, gitbook.Extra)
+		config.NewGitbook()
+		run(gitbook.Files, gitbook.Dirs, gitbook.GetExtra())
 	} else {
 		fmt.Printf("还不支持%v生成器\n", *config.Item)
 	}

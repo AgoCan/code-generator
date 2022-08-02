@@ -5,6 +5,8 @@ import (
 	"strings"
 )
 
+// 如果变量都是通过flag获取的话，可以直接使用 ansible下面的Extra
+// 如果跟这里一样的话，有非flag的，则需要写成函数，在初始化后进行重新赋值
 var (
 	Plugins           []string
 	TreeBaToken       = flag.String("t", "", "baidu tongji token")
