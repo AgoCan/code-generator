@@ -1,0 +1,15 @@
+package api
+
+import (
+	"net/http"
+
+	"github.com/gin-gonic/gin"
+
+	"{{ .Title }}/service/health"
+)
+
+func Health(c *gin.Context) {
+	service := health.Health{}
+	res := service.Status()
+	c.JSON(http.StatusOK, res)
+}

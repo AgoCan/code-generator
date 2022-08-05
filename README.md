@@ -38,7 +38,7 @@ go run main.go -i simple -n simple-test
 go run main.go -i simplecobra -n simplecobra-test
 ```
 
-## 生成 简单go的http代码 脚本框架(未做)
+## 生成 简单go的http代码 脚本框架（需要优化）
 
 ```
 go run main.go -i simplehttp -n simplehttp-test
@@ -50,7 +50,7 @@ go run main.go -i simplehttp -n simplehttp-test
 go run main.go -i mvcgorm -n mvcgorm-test
 ```
 
-## 生成 基于gorm的mvc 代码框架(未做)
+## 生成 基于sqlx的mvc 代码框架（需要优化）
 
 ```
 go run main.go -i mvcsqlx -n mvcsqlx-test

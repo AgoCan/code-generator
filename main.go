@@ -8,6 +8,7 @@ import (
 	"github.com/agocan/code-generator/generator"
 	"github.com/agocan/code-generator/generator/ansible"
 	"github.com/agocan/code-generator/generator/gitbook"
+	"github.com/agocan/code-generator/generator/mvcsqlx"
 	"github.com/agocan/code-generator/generator/simple"
 	"github.com/agocan/code-generator/generator/simplecobra"
 	"github.com/agocan/code-generator/generator/simplehttp"
@@ -45,6 +46,8 @@ func main() {
 		run(simplecobra.Files, simplecobra.Dirs, simplecobra.Extra)
 	} else if *config.Item == "simplehttp" {
 		run(simplehttp.Files, simplehttp.Dirs, simplehttp.Extra)
+	} else if *config.Item == "mvcsqlx" {
+		run(mvcsqlx.Files, mvcsqlx.Dirs, mvcsqlx.Extra)
 	} else {
 		fmt.Printf("还不支持%v生成器\n", *config.Item)
 	}

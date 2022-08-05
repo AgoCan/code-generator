@@ -1,0 +1,16 @@
+package response
+
+import "{{ .Title }}/models"
+
+type Ping struct {
+	ID  int    `json:"id"`
+	Msg string `json:"msg"`
+}
+
+func BuildPing(ping models.Ping) Ping {
+	return Ping{
+		ID:  ping.ID,
+		Msg: ping.Msg,
+	}
+}
+
