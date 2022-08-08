@@ -1,13 +1,13 @@
 package response
 
-import "{{ .Title }}/models"
+import "{{ .Title }}/model"
 
 type Ping struct {
 	ID  int    `json:"id"`
 	Msg string `json:"msg"`
 }
 
-func BuildPing(ping models.Ping) Ping {
+func BuildPing(ping model.Ping) Ping {
 	return Ping{
 		ID:  ping.ID,
 		Msg: ping.Msg,

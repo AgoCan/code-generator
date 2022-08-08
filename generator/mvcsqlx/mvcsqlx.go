@@ -31,7 +31,7 @@ var (
 	modContent string
 	//go:embed templates/modelping.tmpl
 	modelPingContent string
-	//go:embed templates/models.tmpl
+	//go:embed templates/model.tmpl
 	modelContent string
 	//go:embed templates/readme.tmpl
 	readmeContent string
@@ -49,15 +49,15 @@ var (
 
 var Files = map[string]string{
 	"main.go":                  mainContent,
-	"routers/router.go":        routerContent,
+	"router/router.go":         routerContent,
 	"api/health.go":            apiContent,
 	"middleware/log/log.go":    middlewarelogContent,
 	"middleware/cors/cors.go":  corsContent,
 	"config/config.go":         configContent,
 	"config/config.yaml":       configYamlContent,
 	"service/health/health.go": serviceContent,
-	"models/model.go":          modelContent,
-	"models/ping.go":           modelPingContent,
+	"model/model.go":           modelContent,
+	"model/ping.go":            modelPingContent,
 	"go.mod":                   modContent,
 	"Dockerfile":               dockerfileContent,
 	"README.md":                readmeContent,
@@ -72,8 +72,8 @@ var Files = map[string]string{
 var Dirs = []string{
 	"api",
 	"service/health",
-	"routers",
-	"models",
+	"router",
+	"model",
 	"templates",
 	"response",
 	"utils/generator",
