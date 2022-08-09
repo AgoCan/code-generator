@@ -1,13 +1,13 @@
 # stage 1: build src code to binary
 # 获取对应版本号 https://hub.docker.com/_/golang
-FROM golang:1.14-alpine3.11 as builder
+FROM golang:1.18-alpine3.11 as builder
 ENV GOPROXY="https://goproxy.io"
 ENV GOPATH=$HOME/go
 ENV GOBIN=$HOME/go/bin
 ENV PATH=$PATH:$GOPATH/bin
-COPY . /app/
+COPY .. /app/
 # 下载指定的包，go.mod已经记录，可以直接使用
-RUN cd /app && go build -o app .
+RUN cd /app && go build -o app cmd/app/main.go
 
 # stage 2: use alpine as base image
 FROM alpine:3.10
