@@ -3,12 +3,12 @@ package router
 import (
 	"github.com/gin-gonic/gin"
 
-	"{{ .Title }}/api"
-	"{{ .Title }}/middleware/log"
+	"{{ .Title }}/internal/handler/health"
+	"{{ .Title }}/internal/pkg/middleware/log"
 )
 
 // SetupRouter 初始化gin入口，路由信息
-func SetupRouter() *gin.Engine{
+func SetupRouter() *gin.Engine {
 	router := gin.New()
 	if err := log.InitLogger(); err != nil {
 		panic(err)
@@ -16,6 +16,6 @@ func SetupRouter() *gin.Engine{
 	router.Use(log.GinLogger(log.Logger),
 		log.GinRecovery(log.Logger, true))
 
-	router.GET("/health", api.Health)
+	router.GET("/health", health.HealthHandler)
 	return router
 }

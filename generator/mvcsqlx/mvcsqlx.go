@@ -7,8 +7,6 @@ import (
 )
 
 var (
-	//go:embed templates/healthapi.tmpl
-	apiContent string
 	//go:embed templates/config.tmpl
 	configContent string
 	//go:embed templates/configoption.tmpl
@@ -29,58 +27,72 @@ var (
 	middlewarelogContent string
 	//go:embed templates/mod.tmpl
 	modContent string
-	//go:embed templates/modelping.tmpl
-	modelPingContent string
-	//go:embed templates/model.tmpl
-	modelContent string
 	//go:embed templates/readme.tmpl
 	readmeContent string
 	//go:embed templates/router.tmpl
 	routerContent string
-	//go:embed templates/healthservice.tmpl
-	serviceContent string
 	//go:embed templates/response.tmpl
 	responseContent string
 	//go:embed templates/responsecommon.tmpl
 	responseCommonContent string
 	//go:embed templates/responseping.tmpl
 	responsePingContent string
+	//go:embed templates/appoptions.tmpl
+	appOptionsContent string
+	//go:embed templates/appserver.tmpl
+	appServerContent string
+	//go:embed templates/database.tmpl
+	databaseContent string
+	//go:embed templates/handler.tmpl
+	handlerContent string
+	//go:embed templates/ping.tmpl
+	pingContent string
+	//go:embed templates/service.tmpl
+	serviceContent string
+	//go:embed templates/pkg.tmpl
+	pkgContent string
 )
 
 var Files = map[string]string{
-	"main.go":                  mainContent,
-	"router/router.go":         routerContent,
-	"api/health.go":            apiContent,
-	"middleware/log/log.go":    middlewarelogContent,
-	"middleware/cors/cors.go":  corsContent,
-	"config/config.go":         configContent,
-	"config/config.yaml":       configYamlContent,
-	"service/health/health.go": serviceContent,
-	"model/model.go":           modelContent,
-	"model/ping.go":            modelPingContent,
-	"go.mod":                   modContent,
-	"Dockerfile":               dockerfileContent,
-	"README.md":                readmeContent,
-	"config/option.go":         configOptionContent,
-	"utils/generator/id.go":    idGenerateContent,
-	"response/response.go":     responseContent,
-	"response/common.go":       responseCommonContent,
-	"response/ping.go":         responsePingContent,
-	".gitignore":               gitignoreContent,
+	"cmd/app/main.go":                      mainContent,
+	"cmd/app/app/server.go":                appServerContent,
+	"cmd/app/app/options/options.go":       appOptionsContent,
+	"config/config.yaml":                   configYamlContent,
+	"internal/config/config.go":            configContent,
+	"internal/config/option.go":            configOptionContent,
+	"internal/handler/health/handler.go":   handlerContent,
+	"internal/handler/health/service.go":   serviceContent,
+	"internal/pkg/database/database.go":    databaseContent,
+	"internal/pkg/database/ping.go":        pingContent,
+	"internal/pkg/generator/id.go":         idGenerateContent,
+	"internal/pkg/middleware/cors/cors.go": corsContent,
+	"internal/pkg/middleware/log/log.go":   middlewarelogContent,
+	"internal/pkg/response/common.go":      responseCommonContent,
+	"internal/pkg/response/ping.go":        responsePingContent,
+	"internal/pkg/response/response.go":    responseContent,
+	"internal/router/router.go":            routerContent,
+	"pkg/pkg.go":                           pkgContent,
+	"README.md":                            readmeContent,
+	"go.mod":                               modContent,
+	".gitignore":                           gitignoreContent,
+	"build/Dockerfile":                     dockerfileContent,
 }
 
 var Dirs = []string{
 	"api",
-	"service/health",
-	"router",
-	"model",
-	"templates",
-	"response",
-	"utils/generator",
+	"build",
+	"cmd/app/app/options",
 	"config",
-	"log",
-	"middleware/log",
-	"middleware/cors",
+	"docs",
+	"internal/config",
+	"internal/handler/health",
+	"internal/pkg/database",
+	"internal/pkg/generator",
+	"internal/pkg/middleware/cors",
+	"internal/pkg/middleware/log",
+	"internal/pkg/response",
+	"internal/router",
+	"pkg",
 }
 
 var Extra = map[string]interface{}{}

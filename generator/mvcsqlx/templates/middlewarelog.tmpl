@@ -1,7 +1,6 @@
 package log
 
 import (
-	"{{ .Title }}/config"
 	"net"
 	"net/http"
 	"net/http/httputil"
@@ -14,6 +13,8 @@ import (
 	"github.com/natefinch/lumberjack"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
+
+	"{{ .Title }}/internal/config"
 )
 
 // Logger 单例

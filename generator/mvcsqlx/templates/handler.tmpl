@@ -1,15 +1,13 @@
-package api
+package health
 
 import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-
-	"{{ .Title }}/service/health"
 )
 
-func Health(c *gin.Context) {
-	service := health.Health{}
+func HealthHandler(c *gin.Context) {
+	service := Health{}
 	res := service.Status()
 	c.JSON(http.StatusOK, res)
 }
