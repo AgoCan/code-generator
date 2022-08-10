@@ -6,25 +6,15 @@
 go run main.go -i ansible -n ansible-test
 ```
 
+[ansible价绍](./docs/ansible.md)
+
 ## 生成 gitbook 文档框架
 
 ```
 go run main.go -i gitbook -n gitbook-test
 ```
 
-### 参数
-
-|参数|描述|默认值|
-|---|---|---|
-| `baidu` | 添加百度统计的token | "" |
-| `google` | 添加谷歌统计的token | "" |
-| `extra-plugin` | 添加需要添加的额外插件 | "" |
-| `keywords` | 添加关键词 | "keywords" |
-| `description` | 添加描述词 | "description" |
-| `sidebar-title` | 添加侧边栏题目 | "" |
-| `sidebar-link` | 添加侧边栏对应链接 | "" |
-
-> 该文档默认安装插件: `-highlight`、`toggle-chapters`、`codeblock-filename`、`sectionx`、`splitter`、`-search`、`-lunr`、`search-pro`、`theme-default`、`prism`、`prism-themes`、`theme-comscore`、`include`、`favicon`、`anchors`、`tbfed-pagefooter`、`hide-element`
+[gitbook介绍](./docs/gitbook.md)
 
 ## 生成 简单的go代码 脚本框架
 
@@ -50,8 +40,12 @@ go run main.go -i simplehttp -n simplehttp-test
 go run main.go -i mvcgorm -n mvcgorm-test
 ```
 
+[mvc介绍](./docs/mvc.md)
+
 ## 生成 基于sqlx的mvc 代码框架（需要优化）
 
 ```
 go run main.go -i mvcsqlx -n mvcsqlx-test
 ```
+
+[mvc介绍](./docs/mvc.md)
