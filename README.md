@@ -1,5 +1,14 @@
 # 代码生成器
 
+## 工具使用
+
+使用`go run main.go --help`查看帮助
+
+帮助文件显示:
+
+- `common:` 则代表给所有应用使用
+- `gitbook:` 则代表是专门给`gitbook`进行配置的
+
 ## 生成ansible代码框
 
 ```
