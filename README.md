@@ -44,7 +44,7 @@ go run main.go -i simplecobra -n simplecobra-test
 go run main.go -i simplehttp -n simplehttp-test
 ```
 
-## 生成 基于gorm的mvc 代码框架(未做)
+## 生成 基于gorm的mvc 代码框架(需要优化)
 
 ```
 go run main.go -i mvcgorm -n mvcgorm-test
