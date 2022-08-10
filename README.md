@@ -22,17 +22,23 @@ go run main.go -i gitbook -n gitbook-test
 go run main.go -i simple -n simple-test
 ```
 
+[简单的go代码介绍](./docs/simple.md)
+
 ## 生成 简单的go代码并且通过传参方式执行 脚本框架（需要优化）
 
 ```
 go run main.go -i simplecobra -n simplecobra-test
 ```
 
+[简单的命令行工具go代码介绍](./docs/cobra.md)
+
 ## 生成 简单go的http代码 脚本框架（需要优化）
 
 ```
 go run main.go -i simplehttp -n simplehttp-test
 ```
+
+[简单的http的go代码介绍](./docs/http.md)
 
 ## 生成 基于gorm的mvc 代码框架(需要优化)
 

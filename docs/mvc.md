@@ -1,4 +1,6 @@
-# mvc代码结构介绍
+# mvc
+
+## 代码目录结构
 
 ```bash
 .
@@ -49,3 +51,15 @@
 │   └── pkg.go
 └── README.md
 ```
+
+## 使用模块
+
+|功能|工具|
+|---|---|
+| web框架 | `github.com/gin-gonic/gin` |
+| 数据库1 | `github.com/jmoiron/sqlx` |
+| 数据库2 | `github.com/jinzhu/gorm` |
+| 日志 | `go.uber.org/zap` |
+| 命令行 | `github.com/urfave/cli/v2` |
+| 配置 | `github.com/spf13/viper` |
+| id生成器 | `github.com/sony/sonyflake` |

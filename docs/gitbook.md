@@ -1,6 +1,19 @@
 # gitbook
 
-### 参数
+## 代码目录结构
+
+```bash
+.
+├── assets
+├── book.json
+├── Dockerfile
+├── README.md
+├── styles
+│   └── website.css
+└── SUMMARY.md
+```
+
+## 参数
 
 |参数|描述|默认值|
 |---|---|---|

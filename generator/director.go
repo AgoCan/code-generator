@@ -13,6 +13,13 @@ type DirGenerator struct {
 
 // Run 运行生成器
 func (d *DirGenerator) Run(opt *Option) (err error) {
+
+	if len(d.Dirs) == 0 {
+		d.Dirs = []string{
+			"",
+		}
+	}
+
 	for _, dir := range d.Dirs {
 		fullDir := path.Join(opt.AbsProjectPath, dir)
 		err = os.MkdirAll(fullDir, 0755)
