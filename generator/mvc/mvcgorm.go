@@ -1,4 +1,4 @@
-package mvcsqlx
+package mvc
 
 // mvc 服务，基于sqlx
 
