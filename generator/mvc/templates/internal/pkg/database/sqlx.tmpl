@@ -10,15 +10,47 @@ import (
 	// 导入mysql驱动
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/jmoiron/sqlx"
-	
-	"{{ .Title }}/internal/config"
 )
 
-// DB db handler
-var DB *sqlx.DB
+// 预留给其他的数据库，所以这么写，例如redis可以继续添加
+type Options struct {
+	Mysql struct {
+		DbName   string
+		Password string
+		Username string
+		Port     string
+		Host     string
+	}
+}
+
+type Client struct {
+	DB *sqlx.DB
+}
+
+func NewClient(o *Options) *Client {
+	Connect := o.Mysql.Username + ":" + o.Mysql.Password + "@tcp(" +
+		o.Mysql.Host + ":" + o.Mysql.Port + ")/" + o.Mysql.DbName +
+		"?charset=utf8mb4&parseTime=True&loc=Local"
+	db, err := sqlx.Open("mysql", Connect)
+	if err != nil {
+		panic(err)
+	}
+
+	err = db.Ping()
+	if err != nil {
+		panic(err)
+	}
+
+	db.SetMaxOpenConns(100)
+	db.SetMaxIdleConns(16)
+
+	return &Client{
+		DB: db,
+	}
+}
 
 // baseModel 继承使用，减少反复写此段代码
-type baseModel struct { 
+type baseModel struct {
 	ID        int        `db:"id"      json:"id"`
 	CreatedAt time.Time  `db:"created_at" json:"created_at"`
 	UpdatedAt time.Time  `db:"updated_at" json:"updated_at"`
@@ -96,30 +128,4 @@ func ReflectTag(s interface{}, arg ...string) (resArray []string, err error) {
 		return resArray, errors.New("resArray is empty")
 	}
 	return resArray, nil
-}
-
-// InitMysql 初始化数据库
-func InitMysql() (err error) { 
-	DB, err = sqlx.Open("mysql", config.MysqlConnect)
-	if err != nil {
-		return err
-	}
-
-	err = DB.Ping()
-	if err != nil {
-		return err
-	}
-
-	DB.SetMaxOpenConns(100)
-	DB.SetMaxIdleConns(16)
-	return nil
-}
-
-// Close 关闭数据库
-func Close() {
-	err := DB.Close()
-	if err != nil {
-		fmt.Println(err)
-	}
-	return
 }

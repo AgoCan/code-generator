@@ -1,6 +1,7 @@
 package log
 
 import (
+	"fmt"
 	"net"
 	"net/http"
 	"net/http/httputil"
@@ -13,40 +14,55 @@ import (
 	"github.com/natefinch/lumberjack"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
-
-	"{{ .Title }}/internal/config"
 )
 
-// Logger 单例
-var Logger *zap.Logger
+// LogConfig 日志配置文件
+type Options struct {
+	LogDirector      string
+	LogInfoFilename  string
+	LogInfoFilePath  string
+	LogErrorFilename string
+	LogErrorFilePath string
+	LogMaxSize       int
+	LogMaxBackups    int
+	LogMaxAge        int
+	LogLevel         string
+}
 
-// InitLogger 初始化Logger
-func InitLogger() (err error) {
-	writeSyncer := getLogWriter(config.Conf.Log.LogInfoFilePath,
-		config.Conf.Log.LogMaxSize,
-		config.Conf.Log.LogMaxBackups,
-		config.Conf.Log.LogMaxAge)
+type Client struct {
+	Logger *zap.Logger
+}
+
+func NewClient(config Options) *Client {
+	writeSyncer := getLogWriter(config.LogInfoFilePath,
+		config.LogMaxSize,
+		config.LogMaxBackups,
+		config.LogMaxAge)
 	// error单独使用一个日志文件，平时好排查
-	writeSyncer2 := getLogWriter(config.Conf.Log.LogErrorFilePath,
-		config.Conf.Log.LogMaxSize,
-		config.Conf.Log.LogMaxBackups,
-		config.Conf.Log.LogMaxAge)
+	writeSyncer2 := getLogWriter(config.LogErrorFilePath,
+		config.LogMaxSize,
+		config.LogMaxBackups,
+		config.LogMaxAge)
 	encoder := getEncoder()
 	var l = new(zapcore.Level)
 	var l2 = new(zapcore.Level)
-	err = l.UnmarshalText([]byte(config.LogLevel))
+	err := l.UnmarshalText([]byte(config.LogLevel))
+	if err != nil {
+		fmt.Println(err)
+	}
 	err = l2.UnmarshalText([]byte("ERROR"))
 	if err != nil {
-
-		return
+		fmt.Println(err)
 	}
 	core := zapcore.NewTee(
 		zapcore.NewCore(encoder, writeSyncer, l),
 		zapcore.NewCore(encoder, writeSyncer2, l2),
 	)
 
-	Logger = zap.New(core, zap.AddCaller())
-	return
+	logger := zap.New(core, zap.AddCaller())
+	return &Client{
+		Logger: logger,
+	}
 }
 
 func getEncoder() zapcore.Encoder {

@@ -13,8 +13,8 @@
 │   └── app                        # app1 取名例如前台就叫  front，后台叫 backend，一个目录一个入口
 │       ├── app                    # app 固定词
 │       │   ├── options            # 处理配置文件
-│       │   │   └── options.go     # 这里一般有一堆文件
-│       │   └── server.go          # 配置文件入口，还有各种初始化，例如MySQL
+│       │   │   └── options.go     # 这里一般有一堆文件,该包内容只给cmd外层调用。其他层次不调用
+│       │   └── server.go          # 配置文件入口，还有各种初始化，例如MySQL，
 │       └── main.go                # 整理入口函数
 ├── config                         # 配置文件存放位置
 │   └── config.yaml                # 配置文件

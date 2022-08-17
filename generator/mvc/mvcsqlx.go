@@ -7,75 +7,75 @@ import (
 )
 
 var (
-	//go:embed templates/config.tmpl
-	configContent string
-	//go:embed templates/configoption.tmpl
-	configOptionContent string
-	//go:embed templates/configyaml.tmpl
-	configYamlContent string
-	//go:embed templates/cors.tmpl
-	corsContent string
-	//go:embed templates/docker-file.tmpl
+	//go:embed templates/build/docker-file.tmpl
 	dockerfileContent string
+	//go:embed templates/cmd/app/app/options/options.tmpl
+	appOptionsContent string
+	//go:embed templates/cmd/app/app/server.tmpl
+	appServerContent string
+	//go:embed templates/cmd/app/main.tmpl
+	mainContent string
+	//go:embed templates/config/config.tmpl
+	configYamlContent string
+	//go:embed templates/internal/config/config.tmpl
+	configContent string
+	//go:embed templates/internal/handler/health/handler.tmpl
+	handlerContent string
+	//go:embed templates/internal/handler/health/service.tmpl
+	serviceContent string
+	//go:embed templates/internal/pkg/database/sqlx.tmpl
+	databaseContent string
+	//go:embed templates/internal/pkg/generator/id.tmpl
+	idGenerateContent string
+	//go:embed templates/internal/pkg/middleware/cors/cors.tmpl
+	corsContent string
+	//go:embed templates/internal/pkg/middleware/cors/config.tmpl
+	corsConfigContent string
+	//go:embed templates/internal/pkg/middleware/cors/utils.tmpl
+	corsUtilsContent string
+	//go:embed templates/internal/pkg/middleware/log/log.tmpl
+	middlewarelogContent string
+	//go:embed templates/internal/pkg/response/common.tmpl
+	responseCommonContent string
+	//go:embed templates/internal/pkg/response/response.tmpl
+	responseContent string
+	//go:embed templates/internal/router/router.tmpl
+	routerContent string
+	//go:embed templates/internal/server/server.tmpl
+	serverContent string
+	//go:embed templates/pkg/pkg.tmpl
+	pkgContent string
+	//go:embed templates/go.mod.tmpl
+	modContent string
 	//go:embed templates/gitignore.tmpl
 	gitignoreContent string
-	//go:embed templates/idgenerator.tmpl
-	idGenerateContent string
-	//go:embed templates/main.tmpl
-	mainContent string
-	//go:embed templates/middlewarelog.tmpl
-	middlewarelogContent string
-	//go:embed templates/mod.tmpl
-	modContent string
 	//go:embed templates/readme.tmpl
 	readmeContent string
-	//go:embed templates/router.tmpl
-	routerContent string
-	//go:embed templates/response.tmpl
-	responseContent string
-	//go:embed templates/responsecommon.tmpl
-	responseCommonContent string
-	//go:embed templates/responseping.tmpl
-	responsePingContent string
-	//go:embed templates/appoptions.tmpl
-	appOptionsContent string
-	//go:embed templates/appserver.tmpl
-	appServerContent string
-	//go:embed templates/database.tmpl
-	databaseContent string
-	//go:embed templates/handler.tmpl
-	handlerContent string
-	//go:embed templates/ping.tmpl
-	pingContent string
-	//go:embed templates/service.tmpl
-	serviceContent string
-	//go:embed templates/pkg.tmpl
-	pkgContent string
 )
 
 var Files = map[string]string{
-	"cmd/app/main.go":                      mainContent,
-	"cmd/app/app/server.go":                appServerContent,
-	"cmd/app/app/options/options.go":       appOptionsContent,
-	"config/config.yaml":                   configYamlContent,
-	"internal/config/config.go":            configContent,
-	"internal/config/option.go":            configOptionContent,
-	"internal/handler/health/handler.go":   handlerContent,
-	"internal/handler/health/service.go":   serviceContent,
-	"internal/pkg/database/database.go":    databaseContent,
-	"internal/pkg/database/ping.go":        pingContent,
-	"internal/pkg/generator/id.go":         idGenerateContent,
-	"internal/pkg/middleware/cors/cors.go": corsContent,
-	"internal/pkg/middleware/log/log.go":   middlewarelogContent,
-	"internal/pkg/response/common.go":      responseCommonContent,
-	"internal/pkg/response/ping.go":        responsePingContent,
-	"internal/pkg/response/response.go":    responseContent,
-	"internal/router/router.go":            routerContent,
-	"pkg/pkg.go":                           pkgContent,
-	"README.md":                            readmeContent,
-	"go.mod":                               modContent,
-	".gitignore":                           gitignoreContent,
-	"build/Dockerfile":                     dockerfileContent,
+	"cmd/app/main.go":                        mainContent,
+	"cmd/app/app/server.go":                  appServerContent,
+	"cmd/app/app/options/options.go":         appOptionsContent,
+	"config/config.yaml":                     configYamlContent,
+	"internal/config/config.go":              configContent,
+	"internal/handler/health/handler.go":     handlerContent,
+	"internal/handler/health/service.go":     serviceContent,
+	"internal/pkg/database/database.go":      databaseContent,
+	"internal/pkg/generator/id.go":           idGenerateContent,
+	"internal/pkg/middleware/cors/cors.go":   corsContent,
+	"internal/pkg/middleware/cors/config.go": corsConfigContent,
+	"internal/pkg/middleware/cors/utils.go":  corsUtilsContent,
+	"internal/pkg/middleware/log/log.go":     middlewarelogContent,
+	"internal/pkg/response/common.go":        responseCommonContent,
+	"internal/pkg/response/response.go":      responseContent,
+	"internal/server/server.go":              serverContent,
+	"internal/router/router.go":              routerContent,
+	"pkg/pkg.go":                             pkgContent,
+	"README.md":                              readmeContent,
+	"go.mod":                                 modContent,
+	".gitignore":                             gitignoreContent,
+	"build/Dockerfile":                       dockerfileContent,
 }
 
 var Dirs = []string{
@@ -91,6 +91,7 @@ var Dirs = []string{
 	"internal/pkg/middleware/cors",
 	"internal/pkg/middleware/log",
 	"internal/pkg/response",
+	"internal/server",
 	"internal/router",
 	"pkg",
 }
