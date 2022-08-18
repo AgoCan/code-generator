@@ -19,7 +19,7 @@
 │   └── config.yaml
 ├── docs                             # 文档
 ├── go.mod                           # go.mod
-├── internal                         # 内部资源，外部不允许调用
+├── internal                         # 内部资源，外部不允许调用  请查看 https://golang.org/doc/go1.4#internalpackages
 │   ├── config                       # 配置文件，主要就是设置一下配置的相关结构体之类
 │   │   └── config.go      
 │   ├── handler                      # handler函数，这里是把数据模块，handler 放置一起
@@ -46,7 +46,7 @@
 │   └── server                       # 这里也可以改成api， 主要就是上面的入口函数调用的地方，其他的函数主要作用是插件，这里是主要处理逻辑部分
 │       └── server.go
 ├── pkg                              # 跟上面的pkg一样的说法，不推荐，但是很多代码库有这个习惯，看个人使用，这里是可以其他代码库进行调用
-│   └── pkg.go
+│   └── pkg.go                       # 查看 https://github.com/golang-standards/project-layout/issues/10 只看讨论即可
 └── README.md                        # readme内容
 ```
 
