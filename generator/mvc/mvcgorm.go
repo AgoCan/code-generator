@@ -7,7 +7,7 @@ import (
 )
 
 var (
-	//go:embed templates/internal/pkg/database/sqlx.tmpl
+	//go:embed templates/internal/pkg/database/gorm.tmpl
 	gormDatabaseContent string
 )
 
