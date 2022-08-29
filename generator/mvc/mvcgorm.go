@@ -27,6 +27,7 @@ var GormFiles = map[string]string{
 	"internal/pkg/middleware/log/log.go":     middlewarelogContent,
 	"internal/pkg/response/common.go":        responseCommonContent,
 	"internal/pkg/response/response.go":      responseContent,
+	"internal/server/server.go":              serverContent,
 	"internal/router/router.go":              routerContent,
 	"pkg/pkg.go":                             pkgContent,
 	"README.md":                              readmeContent,
@@ -48,6 +49,7 @@ var GormDirs = []string{
 	"internal/pkg/middleware/cors",
 	"internal/pkg/middleware/log",
 	"internal/pkg/response",
+	"internal/server",
 	"internal/router",
 	"pkg",
 }
