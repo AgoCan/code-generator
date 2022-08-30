@@ -41,10 +41,9 @@
 │   │   └── response                 # 返回内容
 │   │       ├── common.go
 │   │       └── response.go
-│   ├── router                       # 路由
-│   │   └── router.go
 │   └── server                       # 这里也可以改成api， 主要就是上面的入口函数调用的地方，其他的函数主要作用是插件，这里是主要处理逻辑部分
 │       └── server.go
+│   │   └── router.go                # 路由在这里，通过传参的方式把配置文件等服务传到handler进行使用
 ├── pkg                              # 跟上面的pkg一样的说法，不推荐，但是很多代码库有这个习惯，看个人使用，这里是可以其他代码库进行调用
 │   └── pkg.go                       # 查看 https://github.com/golang-standards/project-layout/issues/10 只看讨论即可
 └── README.md                        # readme内容
