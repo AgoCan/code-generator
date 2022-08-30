@@ -16,6 +16,14 @@ func Error(code int) Response {
 
 }
 
+func ErrorUnknown(code int, data string) Response {
+	return Response{
+		Code:    code,
+		Message: data,
+	}
+
+}
+
 // Success 回调正确信息
 func Success(data interface{}) Response {
 	return Response{

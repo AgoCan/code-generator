@@ -39,8 +39,10 @@ var (
 	responseCommonContent string
 	//go:embed templates/internal/pkg/response/response.tmpl
 	responseContent string
-	//go:embed templates/internal/router/router.tmpl
+	//go:embed templates/internal/server/router.tmpl
 	routerContent string
+	//go:embed templates/internal/server/migrate.tmpl
+	migrateContent string
 	//go:embed templates/internal/server/server.tmpl
 	serverContent string
 	//go:embed templates/pkg/pkg.tmpl
@@ -70,7 +72,8 @@ var Files = map[string]string{
 	"internal/pkg/response/common.go":        responseCommonContent,
 	"internal/pkg/response/response.go":      responseContent,
 	"internal/server/server.go":              serverContent,
-	"internal/router/router.go":              routerContent,
+	"internal/server/router.go":              routerContent,
+	"internal/server/migrate.go":             migrateContent,
 	"pkg/pkg.go":                             pkgContent,
 	"README.md":                              readmeContent,
 	"go.mod":                                 modContent,
@@ -92,7 +95,6 @@ var Dirs = []string{
 	"internal/pkg/middleware/log",
 	"internal/pkg/response",
 	"internal/server",
-	"internal/router",
 	"pkg",
 }
 

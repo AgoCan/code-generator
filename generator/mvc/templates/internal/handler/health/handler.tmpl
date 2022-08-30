@@ -6,8 +6,11 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func HealthHandler(c *gin.Context) {
-	service := Health{}
-	res := service.Status()
-	c.JSON(http.StatusOK, res)
+func HealthHandler() func(c *gin.Context) {
+
+	return func(c *gin.Context) {
+		service := Health{}
+		res := service.Status()
+		c.JSON(http.StatusOK, res)
+	}
 }
