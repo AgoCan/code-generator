@@ -35,22 +35,23 @@ func run(files map[string]string, dirs []string, extra map[string]interface{}) {
 func main() {
 	config.DefaultConfig()
 	generator.Init()
-	if *config.Item == "ansible" {
+	switch {
+	case *config.Item == "ansible":
 		run(ansible.Files, ansible.Dirs, ansible.Extra)
-	} else if *config.Item == "gitbook" {
+	case *config.Item == "gitbook":
 		config.NewGitbook()
 		run(gitbook.Files, gitbook.Dirs, gitbook.GetExtra())
-	} else if *config.Item == "simple" {
+	case *config.Item == "simple":
 		run(simple.Files, simple.Dirs, simple.Extra)
-	} else if *config.Item == "simplecobra" {
+	case *config.Item == "simplecobra":
 		run(simplecobra.Files, simplecobra.Dirs, simplecobra.Extra)
-	} else if *config.Item == "simplehttp" {
+	case *config.Item == "simplehttp":
 		run(simplehttp.Files, simplehttp.Dirs, simplehttp.Extra)
-	} else if *config.Item == "mvcsqlx" {
+	case *config.Item == "mvcsqlx":
 		run(mvc.Files, mvc.Dirs, mvc.Extra)
-	} else if *config.Item == "mvcgorm" {
+	case *config.Item == "mvcgorm":
 		run(mvc.GormFiles, mvc.GormDirs, mvc.GormExtra)
-	} else {
+	default:
 		fmt.Printf("还不支持%v生成器\n", *config.Item)
 	}
 }
