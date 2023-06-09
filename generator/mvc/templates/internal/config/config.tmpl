@@ -11,7 +11,6 @@ import (
 
 	"github.com/spf13/viper"
 
-    "{{ .Title }}/internal/pkg/database"
 	"{{ .Title }}/internal/pkg/middleware/log"
 )
 
@@ -31,7 +30,7 @@ func New(loadPath string) *Config {
 
 // Config 配置文件
 type Config struct {
-	Db  database.Options
+	DB  DB
 	Log log.Options
 }
 

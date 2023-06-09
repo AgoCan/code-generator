@@ -8,36 +8,44 @@ import (
 
 // 预留给其他的数据库，所以这么写，例如redis可以继续添加
 type Options struct {
-	Mysql struct {
-		DbName   string
-		Password string
-		Username string
-		Port     string
-		Host     string
-	}
+	Migrate bool
 }
 
 type Client struct {
 	DB *gorm.DB
 }
 
-func NewClient(o *Options) *Client {
-	Connect := o.Mysql.Username + ":" + o.Mysql.Password + "@tcp(" +
-		o.Mysql.Host + ":" + o.Mysql.Port + ")/" + o.Mysql.DbName +
-		"?charset=utf8mb4&parseTime=True&loc=Local"
-	db, err := gorm.Open("mysql", Connect)
+type Option interface {
+	apply(*Options)
+}
+
+func NewClient(addr string, opts ...Option) *Client {
+	db, err := gorm.Open("mysql", addr)
 	if err != nil {
-		panic(err)
+		return nil
 	}
-	// 创建数据库
-	migrate()
+	options := Options{
+		Migrate: true,
+	}
+	for _, o := range opts {
+		o.apply(&options)
+	}
 
 	// 尝试连接
 	err = db.DB().Ping()
 	return &Client{
 		DB: db,
 	}
+}
 
+type Migrate bool
+
+func (m Migrate) apply(o *Options) {
+	o.Migrate = bool(m)
+}
+
+func WithMigrate(c bool) Option {
+	return Migrate(c)
 }
 
 func migrate() {

@@ -26,7 +26,13 @@ func (o *AppOptions) NewServer() (*server.Server, error) {
 	o.loadConfig(o.ConfFile)
 	s.Config = o.Config
 	s.Log = log.NewClient(s.Config.Log)
-	s.DB = database.NewClient(&s.Config.Db)
+
+	Connect := o.Config.DB.Mysql.Username + ":" + o.Config.DB.Mysql.Password + "@tcp(" +
+		o.Config.DB.Mysql.Host + ":" + o.Config.DB.Mysql.Port + ")/" + o.Config.DB.Mysql.DbName +
+		"?charset=utf8mb4&parseTime=True&loc=Local"
+
+	s.DB = database.NewClient(Connect,
+		database.WithMigrate(true))
 	return s, nil
 }
 

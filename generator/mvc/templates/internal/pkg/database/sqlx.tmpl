@@ -14,27 +14,31 @@ import (
 
 // 预留给其他的数据库，所以这么写，例如redis可以继续添加
 type Options struct {
-	Mysql struct {
-		DbName   string
-		Password string
-		Username string
-		Port     string
-		Host     string
-	}
+	Migrate bool
 }
 
 type Client struct {
 	DB *sqlx.DB
 }
 
-func NewClient(o *Options) *Client {
-	Connect := o.Mysql.Username + ":" + o.Mysql.Password + "@tcp(" +
-		o.Mysql.Host + ":" + o.Mysql.Port + ")/" + o.Mysql.DbName +
-		"?charset=utf8mb4&parseTime=True&loc=Local"
-	db, err := sqlx.Open("mysql", Connect)
+type Option interface {
+	apply(*Options)
+}
+
+func NewClient(addr string, opts ...Option) *Client {
+	db, err := sqlx.Open("mysql", addr)
 	if err != nil {
 		panic(err)
 	}
+
+	options := Options{
+		Migrate: true,
+	}
+
+	for _, o := range opts {
+		o.apply(&options)
+	}
+
 
 	err = db.Ping()
 	if err != nil {
@@ -47,6 +51,19 @@ func NewClient(o *Options) *Client {
 	return &Client{
 		DB: db,
 	}
+}
+
+type Migrate bool
+
+func (m Migrate) apply(o *Options) {
+	o.Migrate = bool(m)
+}
+
+func WithMigrate(c bool) Option {
+	return Migrate(c)
+}
+
+func migrate() {
 }
 
 // baseModel 继承使用，减少反复写此段代码
