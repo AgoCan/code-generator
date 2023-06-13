@@ -16,37 +16,26 @@ import (
 	"go.uber.org/zap/zapcore"
 )
 
-// LogConfig 日志配置文件
-type Options struct {
-	LogDirector      string
-	LogInfoFilename  string
-	LogInfoFilePath  string
-	LogErrorFilename string
-	LogErrorFilePath string
-	LogMaxSize       int
-	LogMaxBackups    int
-	LogMaxAge        int
-	LogLevel         string
-}
-
 type Client struct {
 	Logger *zap.Logger
 }
 
-func NewClient(config Options) *Client {
-	writeSyncer := getLogWriter(config.LogInfoFilePath,
-		config.LogMaxSize,
-		config.LogMaxBackups,
-		config.LogMaxAge)
+func NewClient(infoFilePath, errorFilePath, level string,
+	maxSize, maxBackups, maxAge int,
+) *Client {
+	writeSyncer := getLogWriter(infoFilePath,
+		maxSize,
+		maxBackups,
+		maxAge)
 	// error单独使用一个日志文件，平时好排查
-	writeSyncer2 := getLogWriter(config.LogErrorFilePath,
-		config.LogMaxSize,
-		config.LogMaxBackups,
-		config.LogMaxAge)
+	writeSyncer2 := getLogWriter(infoFilePath,
+		maxSize,
+		maxBackups,
+		maxAge)
 	encoder := getEncoder()
 	var l = new(zapcore.Level)
 	var l2 = new(zapcore.Level)
-	err := l.UnmarshalText([]byte(config.LogLevel))
+	err := l.UnmarshalText([]byte(level))
 	if err != nil {
 		fmt.Println(err)
 	}

@@ -25,7 +25,9 @@ func (o *AppOptions) NewServer() (*server.Server, error) {
 	s := server.NewServer()
 	o.loadConfig(o.ConfFile)
 	s.Config = o.Config
-	s.Log = log.NewClient(s.Config.Log)
+	s.Log = log.NewClient(o.Config.Log.InfoFilePath, o.Config.Log.ErrorFilePath, o.Config.Log.Level,
+		o.Config.Log.MaxSize, o.Config.Log.MaxBackups, o.Config.Log.MaxAge,
+	)
 
 	Connect := o.Config.DB.Mysql.Username + ":" + o.Config.DB.Mysql.Password + "@tcp(" +
 		o.Config.DB.Mysql.Host + ":" + o.Config.DB.Mysql.Port + ")/" + o.Config.DB.Mysql.DbName +
@@ -41,4 +43,9 @@ func (o *AppOptions) loadConfig(configFile string) {
 		configFile = _defaultConfigFile
 	}
 	o.Config = config.New(configFile)
+	if o.Config.Log.Path == "" {
+		o.Config.Log.Path = "./log"
+	}
+	o.Config.Log.ErrorFilePath = o.Config.Log.Path + "/" + o.Config.Log.ErrorFilename
+	o.Config.Log.InfoFilePath = o.Config.Log.Path + "/" + o.Config.Log.InfoFilename
 }
