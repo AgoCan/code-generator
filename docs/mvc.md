@@ -21,7 +21,9 @@
 ├── go.mod                           # go.mod
 ├── internal                         # 内部资源，外部不允许调用  请查看 https://golang.org/doc/go1.4#internalpackages
 │   ├── config                       # 配置文件，主要就是设置一下配置的相关结构体之类
-│   │   └── config.go      
+│   │   ├── config.go      
+│   │   ├── db.go                    # 数据库的配置项
+│   │   └── log.go                   # 日志的配置项
 │   ├── handler                      # handler函数，这里是把数据模块，handler 放置一起
 │   │   └── health                   # 案例
 │   │       ├── handler.go
