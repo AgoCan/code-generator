@@ -31,6 +31,7 @@ func NewAPIServerCommand() *cobra.Command {
 }
 
 func run(o *options.AppOptions) (err error) {
+	// 初始化返回值
 	response.Init()
 	server, err := o.NewServer()
 	server.Run()
