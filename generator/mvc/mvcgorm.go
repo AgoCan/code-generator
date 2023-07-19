@@ -53,7 +53,7 @@ var GormDirs = []string{
 	"internal/pkg/middleware/log",
 	"internal/pkg/response",
 	"internal/server",
-	"internal/router",
+	// "internal/router",
 	"pkg",
 }
 
