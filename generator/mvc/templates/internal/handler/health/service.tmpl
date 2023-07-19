@@ -1,8 +1,15 @@
 package health
 
-import "{{ .Title }}/internal/pkg/response"
+import (
+	"{{ .Title }}/internal/config"
+	"{{ .Title }}/internal/pkg/database"
+	"{{ .Title }}/internal/pkg/response"
+)
 
-type Health struct{}
+type Health struct{
+	Config *config.Config
+	DB     *database.Client
+}
 
 func (h *Health) Status() response.Response {
 	return response.Success("health")
