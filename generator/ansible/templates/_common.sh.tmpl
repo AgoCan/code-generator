@@ -28,3 +28,17 @@ function check_error(){
         exit 1
     fi
 }
+
+function confirm(){
+    echo 
+    read -p "请确认是否是当前步骤[Y/N]: " confirm_option
+    case $confirm_option in
+       N|n|NO|no)
+           exit
+           ;;
+       Y|y|YES|yes)
+           return 0
+           ;;
+    esac
+}
+

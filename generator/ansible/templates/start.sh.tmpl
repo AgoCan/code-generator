@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export ANSIBLE_HOST_KEY_CHECKING=False
+
 BASH_NAME=$0
 SCRIPT_DIR=$(cd $(dirname ${BASH_SOURCE[0]}); pwd)
 
@@ -11,6 +13,9 @@ source ${SCRIPT_DIR}/config/config.sh
 
 #Load user config 
 source ${SCRIPT_DIR}/config/config.ini
+
+#Load check file,check config
+source ${SCRIPT_DIR}/utils/check_config.sh
 
 ####### 根据环境设置变量 #######
 source ${SCRIPT_DIR}/config/set_config.sh
@@ -26,6 +31,8 @@ function ansible_script(){
 }
 
 function main(){
+    check_config
+    
     log_green "create inventory."
     gen_inventory_info
     
