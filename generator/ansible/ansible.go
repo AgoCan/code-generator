@@ -13,6 +13,8 @@ var (
 	genInventoryFileContent string
 	//go:embed templates/all.yaml.tmpl
 	allContent string
+	//go:embed templates/check_config.sh.tmpl
+	checkConfigContent string
 	//go:embed templates/config.ini.tmpl
 	configIniContent string
 	//go:embed templates/config.sh.tmpl
@@ -33,6 +35,7 @@ var Files = map[string]string{
 	"playbooks/roles/base/tasks/main.yml": tasksContent,
 	"start.sh":                            startShContent,
 	"config/config.ini":                   configIniContent,
+	"config/check_config.sh":              checkConfigContent,
 	"config/config.sh":                    configShContent,
 	"config/set_config.sh":                setConfigShContent,
 }
