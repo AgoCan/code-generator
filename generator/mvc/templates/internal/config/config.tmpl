@@ -14,6 +14,7 @@ import (
 
 func New(loadPath string) *Config {
 	var conf *Config
+	viper.AutomaticEnv()
 	viper.SetConfigFile(loadPath)
 	err := viper.ReadInConfig()
 	if err != nil {
