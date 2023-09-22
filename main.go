@@ -8,6 +8,7 @@ import (
 	"github.com/agocan/code-generator/generator"
 	"github.com/agocan/code-generator/generator/ansible"
 	"github.com/agocan/code-generator/generator/gitbook"
+	"github.com/agocan/code-generator/generator/mdbook"
 	"github.com/agocan/code-generator/generator/mvc"
 	"github.com/agocan/code-generator/generator/simple"
 	"github.com/agocan/code-generator/generator/simplecobra"
@@ -41,6 +42,8 @@ func main() {
 	case *config.Item == "gitbook":
 		config.NewGitbook()
 		run(gitbook.Files, gitbook.Dirs, gitbook.GetExtra())
+	case *config.Item == "mdbook":
+		run(mdbook.Files, mdbook.Dirs, mdbook.Extra)
 	case *config.Item == "simple":
 		run(simple.Files, simple.Dirs, simple.Extra)
 	case *config.Item == "simplecobra":

@@ -29,6 +29,14 @@ go run main.go -i gitbook -n gitbook-test
 
 [gitbook介绍](./docs/gitbook.md)
 
+## 生成 mdbook 文档框架
+
+```
+go run main.go -i mdbook -n mdbook-test
+```
+
+[mdbook介绍](./docs/mdbook.md)
+
 ## 生成 简单的go代码 脚本框架
 
 ```
