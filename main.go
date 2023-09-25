@@ -34,7 +34,7 @@ func run(files map[string]string, dirs []string, extra map[string]interface{}) {
 }
 
 func version() {
-	fmt.Println("v0.0.2")
+	fmt.Println("0.0.2")
 }
 
 func main() {
