@@ -9,6 +9,7 @@ import (
 var (
 	Title       = flag.String("n", "demo", "Common: Project name.")
 	ProjectPath = flag.String("p", ".", "Common: Project path.")
+	Version     = flag.Bool("v", false, "Print version.")
 	Item        = flag.String("i",
 		"ansible",
 		"Common: Project item. Like 'ansible'、'gitbook'、'mdbook'、'simple'、'simplecobra'、'simplehttp'、'mvcgorm'、'mvcsqlx'.",

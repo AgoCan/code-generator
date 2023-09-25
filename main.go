@@ -33,8 +33,16 @@ func run(files map[string]string, dirs []string, extra map[string]interface{}) {
 	generator.RunGenerator(&opt)
 }
 
+func version() {
+	fmt.Println("v0.0.2")
+}
+
 func main() {
 	config.DefaultConfig()
+	if *config.Version {
+		version()
+		return
+	}
 	generator.Init()
 	switch {
 	case *config.Item == "ansible":
