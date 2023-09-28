@@ -1,4 +1,8 @@
+
 # 代码生成器
+
+> github: https://github.com/AgoCan/code-generator.git  
+> gitee: https://gitee.com/agocan/code-generator.git  
 
 代码生成器，主要是解决平时常开代码，总是要复制的操作。
 
