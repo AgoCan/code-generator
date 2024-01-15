@@ -21,9 +21,7 @@ type Server struct {
 }
 
 func NewServer() *Server {
-	return &Server{
-		Gin: gin.New(),
-	}
+	return &Server{}
 }
 
 func (s *Server) Run() {

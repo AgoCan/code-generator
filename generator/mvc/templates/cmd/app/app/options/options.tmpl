@@ -25,6 +25,10 @@ func (o *AppOptions) NewServer() (*server.Server, error) {
 	s := server.NewServer()
 	o.loadConfig(o.ConfFile)
 	s.Config = o.Config
+
+	gin.SetMode(s.Config.Server.Mode)
+	s.Gin = gin.New()
+	
 	s.Log = log.NewClient(o.Config.Log.InfoFilePath, o.Config.Log.ErrorFilePath, o.Config.Log.Level,
 		o.Config.Log.MaxSize, o.Config.Log.MaxBackups, o.Config.Log.MaxAge,
 	)
