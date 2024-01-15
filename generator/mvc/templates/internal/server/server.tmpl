@@ -28,8 +28,8 @@ func NewServer() *Server {
 
 func (s *Server) Run() {
 	c := cors.New(cors.Config{
-		AllowOrigins:     []string{"https://foo.com"},
-		AllowMethods:     []string{"PUT", "PATCH"},
+		AllowOrigins:     s.Config.Server.Origins,
+		AllowMethods:     s.Config.Server.Methods,
 		AllowHeaders:     []string{"Origin"},
 		ExposeHeaders:    []string{"Content-Length"},
 		AllowCredentials: true,
@@ -47,7 +47,7 @@ func (s *Server) Run() {
 	
 	s.SetupRouter()
 
-	err := s.Gin.Run(":9000")
+	err := s.Gin.Run(s.Config.Server.Bind + ":" + s.Config.Server.Port)
 	if err != nil {
 		fmt.Println(err)
 	}

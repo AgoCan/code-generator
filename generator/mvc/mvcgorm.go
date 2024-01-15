@@ -19,6 +19,7 @@ var GormFiles = map[string]string{
 	"internal/config/config.go":              configContent,
 	"internal/config/db.go":                  dbConfigContent,
 	"internal/config/log.go":                 logConfigContent,
+	"internal/config/server.go":              serverConfigContent,
 	"internal/handler/health/handler.go":     handlerContent,
 	"internal/handler/health/service.go":     serviceContent,
 	"internal/pkg/database/database.go":      gormDatabaseContent,

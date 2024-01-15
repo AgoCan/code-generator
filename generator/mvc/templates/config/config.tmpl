@@ -1,4 +1,11 @@
 # 使用yaml做配置项
+server:
+  bind: "127.0.0.1"
+  port: 9000
+  mode: release
+  cors:
+    origins: ["*"]
+    methods: ["PUT", "PATCH"]
 # 数据库配置项
 db:
   mysql:

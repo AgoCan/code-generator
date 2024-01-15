@@ -23,6 +23,8 @@ var (
 	dbConfigContent string
 	//go:embed templates/internal/config/log.tmpl
 	logConfigContent string
+	//go:embed templates/internal/config/server.tmpl
+	serverConfigContent string
 	//go:embed templates/internal/handler/health/handler.tmpl
 	handlerContent string
 	//go:embed templates/internal/handler/health/service.tmpl
@@ -67,6 +69,7 @@ var Files = map[string]string{
 	"internal/config/config.go":              configContent,
 	"internal/config/db.go":                  dbConfigContent,
 	"internal/config/log.go":                 logConfigContent,
+	"internal/config/server.go":              serverConfigContent,
 	"internal/handler/health/handler.go":     handlerContent,
 	"internal/handler/health/service.go":     serviceContent,
 	"internal/pkg/database/database.go":      databaseContent,
