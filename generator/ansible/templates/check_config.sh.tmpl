@@ -2,8 +2,14 @@
 # 检测用户配置的config.ini是否正确
 
 function check_ip(){
-    echo $1 | grep -Po "^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$" > /dev/null 2>&1
-    check_error $? "The $1 is not a ip address."
+    ip_address=$1
+    ip_regex='^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$'
+
+    if [[ $ip_address =~ $ip_regex ]]; then
+        echo "$ip_address 是合法的 IP 地址"
+    else
+        echo "$ip_address 不是合法的 IP 地址"
+    fi
 }
 
 function check_config(){
