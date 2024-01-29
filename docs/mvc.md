@@ -62,3 +62,12 @@
 | 命令行 | `github.com/urfave/cli/v2` |
 | 配置 | `github.com/spf13/viper` |
 | id生成器 | `github.com/sony/sonyflake` |
+
+## 其中如果不想用数据库
+需要整理的地方有以下几处
+
+- 删除 internal/database
+- 删除 internal/server/migrate.go
+- 整理 cmd/app/app/options/options.go 下面初始化数据库的相关操作
+- 整理 internal/server/server.go
+- 整理 internal/handler/health/ 下面的 handler.go 和service.go
