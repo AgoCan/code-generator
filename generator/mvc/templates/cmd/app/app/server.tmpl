@@ -7,7 +7,7 @@ import (
 	"{{ .Title }}/internal/pkg/response"
 )
 
-func NewAPIServerCommand() *cobra.Command {
+func NewServerCommand() *cobra.Command {
 	o := options.NewAppOptions()
 	cmd := &cobra.Command{
 		Use:  "app",
@@ -19,7 +19,7 @@ func NewAPIServerCommand() *cobra.Command {
 	cmd.Flags().StringVar(&o.ConfFile, "c", "", "Config file path.")
 	versionCmd := &cobra.Command{
 		Use:   "version",
-		Short: "Print the version of KubeSphere ks-apiserver",
+		Short: "Print the version of {{ .Title }}.",
 		Run: func(cmd *cobra.Command, args []string) {
 			cmd.Println("abc")
 		},

@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	cmd := app.NewAPIServerCommand()
+	cmd := app.NewServerCommand()
 	if err := cmd.Execute(); err != nil {
 		log.Fatalln(err)
 	}
