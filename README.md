@@ -65,7 +65,7 @@ go run main.go -i simplehttp -n simplehttp-test
 
 [简单的http的go代码介绍](./docs/http.md)
 
-## 生成 基于gorm的mvc 代码框架(需要优化)
+## 生成 基于gorm的mvc 代码框架(持续优化)
 
 ```
 go run main.go -i mvcgorm -n mvcgorm-test
@@ -73,7 +73,7 @@ go run main.go -i mvcgorm -n mvcgorm-test
 
 [mvc介绍](./docs/mvc.md)
 
-## 生成 基于sqlx的mvc 代码框架（需要优化）
+## 生成 基于sqlx的mvc 代码框架（持续优化）
 
 ```
 go run main.go -i mvcsqlx -n mvcsqlx-test
