@@ -49,6 +49,7 @@ func NewClient(infoFilePath, errorFilePath, level string,
 	)
 
 	logger := zap.New(core, zap.AddCaller())
+	zap.ReplaceGlobals(logger) // 替换zap包中全局的logger实例，后续在其他包中只需使用zap.L()和zap.S()调用即可
 	return &Client{
 		Logger: logger,
 	}
