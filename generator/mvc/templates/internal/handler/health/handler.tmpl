@@ -9,7 +9,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func HealthHandler(conf *config.Config, db *database.Client) func(c *gin.Context) {
+func HealthHandler(conf *config.Config, db database.DB) func(c *gin.Context) {
 
 	return func(c *gin.Context) {
 		service := Health{

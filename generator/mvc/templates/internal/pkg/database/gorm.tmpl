@@ -1,30 +1,40 @@
 package database
 
-// https://gorm.io/zh_CN/
 import (
-	"github.com/jinzhu/gorm"
-	_ "github.com/jinzhu/gorm/dialects/mysql"
+	"gorm.io/gorm"
 )
 
-// 预留给其他的数据库，所以这么写，例如redis可以继续添加
-type Options struct {
-	Migrate bool
+type DB interface {
+	Connect(connectionString string) error
+	Close() error
+	GetDB() *gorm.DB
 }
 
-type Client struct {
-	DB *gorm.DB
+type Options struct {
+	Migrate bool
 }
 
 type Option interface {
 	apply(*Options)
 }
 
-func NewClient(addr string, opts ...Option) *Client {
-	db, err := gorm.Open("mysql", addr)
-	if err != nil {
-		fmt.Println(err)
-		return nil
+func New(dbType, connectionString string, opts ...Option) DB {
+	var database DB
+
+	switch dbType {
+	case "sqlite":
+		database = &SQLiteDB{}
+	case "mysql":
+		database = &MySQLDB{}
+	default:
+		return nil // errors.New("unsupported database type")
 	}
+
+	err := database.Connect(connectionString)
+	if err != nil {
+		return nil //, err
+	}
+
 	options := Options{
 		Migrate: true,
 	}
@@ -32,22 +42,5 @@ func NewClient(addr string, opts ...Option) *Client {
 		o.apply(&options)
 	}
 
-	// 尝试连接
-	err = db.DB().Ping()
-	return &Client{
-		DB: db,
-	}
-}
-
-type Migrate bool
-
-func (m Migrate) apply(o *Options) {
-	o.Migrate = bool(m)
-}
-
-func WithMigrate(c bool) Option {
-	return Migrate(c)
-}
-
-func migrate() {
+	return database //, nil
 }

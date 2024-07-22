@@ -56,7 +56,6 @@
 |功能|工具|
 |---|---|
 | web框架 | `github.com/gin-gonic/gin` |
-| 数据库1 | `github.com/jmoiron/sqlx` |
 | 数据库2 | `github.com/jinzhu/gorm` |
 | 日志 | `go.uber.org/zap` |
 | 命令行 | `github.com/urfave/cli/v2` |

@@ -72,11 +72,3 @@ go run main.go -i mvcgorm -n mvcgorm-test
 ```
 
 [mvc介绍](./docs/mvc.md)
-
-## 生成 基于sqlx的mvc 代码框架（持续优化）
-
-```
-go run main.go -i mvcsqlx -n mvcsqlx-test
-```
-
-[mvc介绍](./docs/mvc.md)

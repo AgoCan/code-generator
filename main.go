@@ -58,8 +58,6 @@ func main() {
 		run(simplecobra.Files, simplecobra.Dirs, simplecobra.Extra)
 	case *config.Item == "simplehttp":
 		run(simplehttp.Files, simplehttp.Dirs, simplehttp.Extra)
-	case *config.Item == "mvcsqlx":
-		run(mvc.Files, mvc.Dirs, mvc.Extra)
 	case *config.Item == "mvcgorm":
 		run(mvc.GormFiles, mvc.GormDirs, mvc.GormExtra)
 	default:
