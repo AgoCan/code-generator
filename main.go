@@ -15,6 +15,8 @@ import (
 	"github.com/agocan/code-generator/generator/simplehttp"
 )
 
+var Version = "0.0.3"
+
 func run(files map[string]string, dirs []string, extra map[string]interface{}) {
 
 	opt := generator.Option{
@@ -34,7 +36,7 @@ func run(files map[string]string, dirs []string, extra map[string]interface{}) {
 }
 
 func version() {
-	fmt.Println("0.0.2")
+	fmt.Println(Version)
 }
 
 func main() {
