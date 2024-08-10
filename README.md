@@ -17,6 +17,16 @@
 - `common:` 则代表给所有应用使用
 - `gitbook:` 则代表是专门给`gitbook`进行配置的
 
+## 生成 基于gorm的mvc 代码框架(持续优化)
+
+```
+go run main.go -i mvcgorm -n mvcgorm-test
+```
+
+生成后样式: https://github.com/AgoCan/mvc-demo
+
+[mvc介绍](./docs/mvc.md)
+
 ## 生成ansible代码框
 
 ```
@@ -64,11 +74,3 @@ go run main.go -i simplehttp -n simplehttp-test
 ```
 
 [简单的http的go代码介绍](./docs/http.md)
-
-## 生成 基于gorm的mvc 代码框架(持续优化)
-
-```
-go run main.go -i mvcgorm -n mvcgorm-test
-```
-
-[mvc介绍](./docs/mvc.md)
