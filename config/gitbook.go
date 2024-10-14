@@ -22,7 +22,7 @@ var (
 
 func NewGitbook() {
 	// "ga" , "3-ba"
-	Plugins = []string{"-highlight", "toggle-chapters", "codeblock-filename", "sectionx", "splitter", "-search",
+	Plugins = []string{"-highlight", "toggle-chapters", "codeblock-filename", "splitter", "-search",
 		"-lunr", "search-pro", "theme-default", "prism", "prism-themes", "theme-comscore",
 		"include", "favicon", "anchors", "tbfed-pagefooter", "hide-element"}
 	ExtraPluginsSlice := strings.Split(*ExtraPlugins, ",")
