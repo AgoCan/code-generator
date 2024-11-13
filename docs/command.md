@@ -1,5 +1,7 @@
 # 命令行工具
 
+> 个人理解： golang 主推荐比较简单的代码，并且自由风格。所以，只要代码框架是OK的，随性写代码都行。
+
 ## 代码目录结构
 
 > 按照 https://github.com/golang-standards/project-layout 规范进行目录结构设置
