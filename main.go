@@ -12,7 +12,6 @@ import (
 	"github.com/agocan/code-generator/generator/mdbook"
 	"github.com/agocan/code-generator/generator/mvc"
 	"github.com/agocan/code-generator/generator/simple"
-	"github.com/agocan/code-generator/generator/simplecobra"
 	"github.com/agocan/code-generator/generator/simplehttp"
 )
 
@@ -57,8 +56,6 @@ func main() {
 		run(mdbook.Files, mdbook.Dirs, mdbook.Extra)
 	case *config.Item == "simple":
 		run(simple.Files, simple.Dirs, simple.Extra)
-	case *config.Item == "simplecobra":
-		run(simplecobra.Files, simplecobra.Dirs, simplecobra.Extra)
 	case *config.Item == "simplehttp":
 		run(simplehttp.Files, simplehttp.Dirs, simplehttp.Extra)
 	case *config.Item == "mvcgorm":
