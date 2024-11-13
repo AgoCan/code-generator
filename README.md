@@ -33,7 +33,7 @@ go run main.go -i mvcgorm -n mvcgorm-test
 go run main.go -i ansible -n ansible-test
 ```
 
-[ansible价绍](./docs/ansible.md)
+[ansible介绍](./docs/ansible.md)
 
 ## 【golang脚手架】命令行方式
 
