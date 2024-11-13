@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"path"
 
@@ -15,7 +16,7 @@ import (
 	"github.com/agocan/code-generator/generator/simplehttp"
 )
 
-var Version = "0.0.3"
+var Version = "0.0.4"
 
 func run(files map[string]string, dirs []string, extra map[string]interface{}) {
 
@@ -62,6 +63,8 @@ func main() {
 		run(mvc.GormFiles, mvc.GormDirs, mvc.GormExtra)
 	case *config.Item == "command":
 		run(command.Files, command.Dirs, command.Extra)
+	case *config.Item == "":
+		flag.PrintDefaults()
 	default:
 		fmt.Printf("还不支持%v生成器\n", *config.Item)
 	}
