@@ -17,7 +17,7 @@
 - `common:` 则代表给所有应用使用
 - `gitbook:` 则代表是专门给`gitbook`进行配置的
 
-## 生成 基于gorm的mvc 代码框架(持续优化)
+## 【golang脚手架】基于gin的mvc框架(持续优化)
 
 ```
 go run main.go -i mvcgorm -n mvcgorm-test
@@ -27,7 +27,7 @@ go run main.go -i mvcgorm -n mvcgorm-test
 
 [mvc介绍](./docs/mvc.md)
 
-## 生成ansible代码框
+## 【ansible脚手架】基于shell
 
 ```
 go run main.go -i ansible -n ansible-test
@@ -35,7 +35,7 @@ go run main.go -i ansible -n ansible-test
 
 [ansible价绍](./docs/ansible.md)
 
-## 生成 简单的go代码并且通过传参方式执行 脚本框架
+## 【golang脚手架】命令行方式
 
 ```
 go run main.go -i command -n command-test
@@ -43,7 +43,7 @@ go run main.go -i command -n command-test
 
 [简单的命令行工具go代码介绍](./docs/command.md)
 
-## 生成 gitbook 文档框架
+## 【gitbook脚手架】 文档框架
 
 ```
 go run main.go -i gitbook -n gitbook-test
@@ -51,7 +51,7 @@ go run main.go -i gitbook -n gitbook-test
 
 [gitbook介绍](./docs/gitbook.md)
 
-## 生成 mdbook 文档框架
+## 【mdbook脚手架】 文档框架
 
 ```
 go run main.go -i mdbook -n mdbook-test
@@ -59,7 +59,7 @@ go run main.go -i mdbook -n mdbook-test
 
 [mdbook介绍](./docs/mdbook.md)
 
-## 生成 简单的go代码 脚本框架
+## 【golang脚手架】简单函数
 
 ```
 go run main.go -i simple -n simple-test
@@ -67,7 +67,7 @@ go run main.go -i simple -n simple-test
 
 [简单的go代码介绍](./docs/simple.md)
 
-## 生成 简单go的http代码 脚本框架（需要优化）
+## 【golang脚手架】简单http
 
 ```
 go run main.go -i simplehttp -n simplehttp-test
