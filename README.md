@@ -24,7 +24,7 @@
 
 
 
-mvn生成后样式: https://github.com/AgoCan/mvc-demo
+mvc生成后样式: https://github.com/AgoCan/mvc-demo
 
 
 ## gitee和github仓库地址

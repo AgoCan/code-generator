@@ -1,7 +1,6 @@
 package config
 
 import (
-	"flag"
 	"strings"
 )
 
@@ -9,14 +8,14 @@ import (
 // 如果跟这里一样的话，有非flag的，则需要写成函数，在初始化后进行重新赋值
 var (
 	Plugins           []string
-	TreeBaToken       = flag.String("baidu", "", "gitbook: baidu tongji token")
-	GaToken           = flag.String("google", "", "gitbook: google tongji token")
-	ExtraPlugins      = flag.String("extra-plugin", "", `gitbook: use "," split extra plugins.`)
-	Keywords          = flag.String("keywords", "keywords", "gitbook: keywords")
-	Description       = flag.String("description", "description", "gitbook: description")
-	Author            = flag.String("author", "author", "gitbook: author")
-	SidebarTitle      = flag.String("sidebar-title", "", "gitbook: sidebarTitle")
-	SidebarLink       = flag.String("sidebar-link", "", "gitbook: sidebarLink")
+	TreeBaToken       = ""            // flag.String("baidu", "", "gitbook: baidu tongji token")
+	GaToken           = ""            // flag.String("google", "", "gitbook: google tongji token")
+	ExtraPlugins      = ""            // flag.String("extra-plugin", "", `gitbook: use "," split extra plugins.`)
+	Keywords          = "keywords"    // flag.String("keywords", "keywords", "gitbook: keywords")
+	Description       = "description" // flag.String("description", "description", "gitbook: description")
+	Author            = "author"      // flag.String("author", "author", "gitbook: author")
+	SidebarTitle      = ""            // flag.String("sidebar-title", "", "gitbook: sidebarTitle")
+	SidebarLink       = ""            // flag.String("sidebar-link", "", "gitbook: sidebarLink")
 	NpmInstallPlugins []string
 )
 
@@ -25,8 +24,8 @@ func NewGitbook() {
 	Plugins = []string{"-highlight", "toggle-chapters", "codeblock-filename", "splitter", "-search",
 		"-lunr", "search-pro", "theme-default", "prism", "prism-themes", "theme-comscore",
 		"include", "favicon", "anchors", "tbfed-pagefooter", "hide-element"}
-	ExtraPluginsSlice := strings.Split(*ExtraPlugins, ",")
-	if *ExtraPlugins != "" {
+	ExtraPluginsSlice := strings.Split(ExtraPlugins, ",")
+	if ExtraPlugins != "" {
 		Plugins = append(Plugins, ExtraPluginsSlice...)
 	}
 	NpmInstallPlugins = make([]string, len(Plugins))
