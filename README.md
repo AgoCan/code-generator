@@ -23,7 +23,7 @@
 apt-get update 
 apt-get install curl -y
 # linux x86
-version=0.0.3
+version=0.0.4
 release_package=https://github.com/AgoCan/code-generator/releases/download/${version}/code-generator-linux-amd64
 curl -o code-generator ${release_package}
 ./code-generator -h
