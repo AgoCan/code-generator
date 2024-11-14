@@ -9,7 +9,7 @@
 
 |功能|命令|介绍|demo|
 |---|---|---|---|
-|【golang脚手架】基于gin的mvc框架|`code-generator -i mvcgorm`|[项目结构](./docs/mvc.md)|[github仓库](https://github.com/AgoCan/mvc-demo)|
+|【golang脚手架】基于gin的mvc框架|`code-generator -i mvcgorm`|[项目结构](./docs/mvc.md)|[demo地址](https://github.com/AgoCan/mvc-demo)|
 |【ansible脚手架】基于shell|`code-generator -i ansible`|[项目结构](./docs/ansible.md)|暂未创建|
 |【golang脚手架】命令行方式|`code-generator -i command`|[项目结构](./docs/command.md)|暂未创建|
 |【gitbook脚手架】文档框架|`code-generator -i gitbook`|[项目结构](./docs/gitbook.md)|暂未创建|
@@ -22,9 +22,9 @@
 ```bash
 apt-get update 
 apt-get install curl -y
-# 安装windows
+# linux x86
 version=0.0.3
-release_package=https://github.com/AgoCan/code-generator/releases/download/${version}/code-generator-windows-amd64
+release_package=https://github.com/AgoCan/code-generator/releases/download/${version}/code-generator-linux-amd64
 curl -o code-generator ${release_package}
 ./code-generator -h
 ```
