@@ -16,7 +16,7 @@ import (
 	"github.com/agocan/code-generator/generator/simple"
 )
 
-var Version = "0.0.4"
+var Version = "0.0.5"
 
 func run(files map[string]string, dirs []string, extra map[string]interface{}) {
 
