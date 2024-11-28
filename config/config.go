@@ -12,7 +12,7 @@ var (
 	Version     = flag.Bool("v", false, "Print version.")
 	Item        = flag.String("i",
 		"",
-		"Project item. Like 'ansible'、'gitbook'、'mdbook'、'command'、'simplecobra'、'simplehttp'、'mvcgorm'.",
+		"Project item. Like 'ansible'、'gitbook'、'mdbook'、'command'、'simplecobra'、'http'、'mvcgorm'.",
 	)
 	AbsProjectPath string
 )

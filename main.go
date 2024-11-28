@@ -10,10 +10,10 @@ import (
 	"github.com/agocan/code-generator/generator/ansible"
 	"github.com/agocan/code-generator/generator/command"
 	"github.com/agocan/code-generator/generator/gitbook"
+	"github.com/agocan/code-generator/generator/http"
 	"github.com/agocan/code-generator/generator/mdbook"
 	"github.com/agocan/code-generator/generator/mvc"
 	"github.com/agocan/code-generator/generator/simple"
-	"github.com/agocan/code-generator/generator/simplehttp"
 )
 
 var Version = "0.0.4"
@@ -57,8 +57,8 @@ func main() {
 		run(mdbook.Files, mdbook.Dirs, mdbook.Extra)
 	case *config.Item == "simple":
 		run(simple.Files, simple.Dirs, simple.Extra)
-	case *config.Item == "simplehttp":
-		run(simplehttp.Files, simplehttp.Dirs, simplehttp.Extra)
+	case *config.Item == "http":
+		run(http.Files, http.Dirs, http.Extra)
 	case *config.Item == "mvcgorm":
 		run(mvc.GormFiles, mvc.GormDirs, mvc.GormExtra)
 	case *config.Item == "command":
