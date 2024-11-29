@@ -3,7 +3,7 @@ package gitbook
 import (
 	_ "embed"
 
-	"github.com/go-cheetah/cheetach/config"
+	"github.com/go-cheetah/cheetah/config"
 )
 
 var (
