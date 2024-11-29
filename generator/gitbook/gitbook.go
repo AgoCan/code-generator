@@ -3,7 +3,7 @@ package gitbook
 import (
 	_ "embed"
 
-	"github.com/agocan/code-generator/config"
+	"github.com/go-cheetah/cheetach/config"
 )
 
 var (

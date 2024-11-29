@@ -1,4 +1,4 @@
-module github.com/agocan/code-generator
+module github.com/go-cheetah/cheetach
 
 go 1.18
 
