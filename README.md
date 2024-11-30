@@ -1,6 +1,9 @@
 
 # Cheetah - Go脚手架工具
 
+[English](README_en.md)
+---
+
 ## 猎豹的故事
 
 猎豹（Cheetah）是地球上速度最快的动物，凭借其敏捷的动作和极速的奔跑能力，它能够迅速追上猎物，完成捕猎任务。猎豹的快速和高效不仅是它在自然界中的生存优势，也成为了现代技术领域中许多工具和框架追求的目标——快速、高效和简洁。
@@ -17,7 +20,7 @@
 
 |功能|示例|介绍|demo|
 |---|---|---|---|
-|【golang】基于gin的mvc框架|`cheetah -i mvcgorm`|[项目结构](./docs/mvc.md)|[demo地址](https://github.com/AgoCan/mvc-demo)|
+|【golang】基于gin的mvc框架|`cheetah -i mvcgorm`|[项目结构](./docs/mvc.md)|[demo地址](https://github.com/go-cheetah/mvc-demo)|
 |【ansible】基于shell|`cheetah -i ansible`|[项目结构](./docs/ansible.md)|暂未创建|
 |【golang】命令行方式|`cheetah -i command`|[项目结构](./docs/command.md)|暂未创建|
 |【gitbook】文档框架|`cheetah -i gitbook`|[项目结构](./docs/gitbook.md)|暂未创建|
@@ -41,3 +44,7 @@ curl -o cheetah ${release_package}
 
 > github: https://github.com/go-cheetah/cheetah.git  
 > gitee: https://gitee.com/agocan/code-generator.git  
+
+## 许可证
+
+本项目采用 MIT 许可证，详情请查看 [LICENSE](LICENSE) 文件。
