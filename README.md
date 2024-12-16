@@ -27,7 +27,7 @@
 |【mdbook】文档框架|`cheetah -i mdbook`|[项目结构](./docs/mdbook.md)|暂未创建|
 |【golang】简单函数|`cheetah -i simple`|[项目结构](./docs/simple.md)|暂未创建|
 |【golang】简单http|`cheetah -i simplehttp`|[项目结构](./docs/http.md)|暂未创建|
-|【golang】简单http|`cheetah -i grpc`|[项目结构](./docs/grpc-go.md)|暂未创建|
+|【golang】简单grpc-go|`cheetah -i grpc`|[项目结构](./docs/grpc-go.md)|暂未创建|
 
 ### 安装
 
