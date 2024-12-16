@@ -24,14 +24,14 @@ rm -f go${go_version}.linux-amd64.tar.gz
 
 echo export GOPROXY=https://goproxy.cn >> /etc/profile
 echo export GO111MODULE=on >> /etc/profile
-echo export GOPATH=/root/go >> /etc/profile
-echo export PATH=\$PATH:/usr/local/go/bin:\$(go env GOPATH)/bin >> /etc/profile
+echo export PATH=\$PATH:/usr/local/go/bin >> /etc/profile
+echo export PATH=\$PATH:\$\(go env GOPATH\)/bin >> /etc/profile
 
 go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.31.0
 go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.3.0
 ```
 
-### 生成
+### proto生成golang代码
 
 ```
 mkdir -p pb/helloworld
