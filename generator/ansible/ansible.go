@@ -2,7 +2,6 @@ package ansible
 
 import (
 	"embed"
-	_ "embed"
 
 	"github.com/go-cheetah/cheetah/generator/gen"
 )
