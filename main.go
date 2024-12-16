@@ -10,6 +10,7 @@ import (
 	"github.com/go-cheetah/cheetah/generator/ansible"
 	"github.com/go-cheetah/cheetah/generator/command"
 	"github.com/go-cheetah/cheetah/generator/gitbook"
+	"github.com/go-cheetah/cheetah/generator/grpc-go"
 	"github.com/go-cheetah/cheetah/generator/http"
 	"github.com/go-cheetah/cheetah/generator/mdbook"
 	"github.com/go-cheetah/cheetah/generator/mvc"
@@ -63,6 +64,8 @@ func main() {
 		run(mvc.GormFiles, mvc.GormDirs, mvc.GormExtra)
 	case *config.Item == "command":
 		run(command.Files, command.Dirs, command.Extra)
+	case *config.Item == "grpc":
+		run(grpc.Files, grpc.Dirs, grpc.Extra)
 	case *config.Item == "":
 		flag.PrintDefaults()
 	default:
