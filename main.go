@@ -50,7 +50,7 @@ func main() {
 	generator.Init()
 	switch {
 	case *config.Item == "ansible":
-		run(ansible.Files, ansible.Dirs, ansible.Extra)
+		run(ansible.GetFiles(), ansible.Dirs, ansible.Extra)
 	case *config.Item == "gitbook":
 		config.NewGitbook()
 		run(gitbook.Files, gitbook.Dirs, gitbook.GetExtra())
@@ -63,7 +63,7 @@ func main() {
 	case *config.Item == "mvcgorm":
 		run(mvc.GormFiles, mvc.GormDirs, mvc.GormExtra)
 	case *config.Item == "command":
-		run(command.Files, command.Dirs, command.Extra)
+		run(command.GetFiles(), command.Dirs, command.Extra)
 	case *config.Item == "grpc":
 		run(grpc.GetFiles(), grpc.Dirs, grpc.Extra)
 	case *config.Item == "":

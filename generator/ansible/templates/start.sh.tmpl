@@ -6,7 +6,7 @@ BASH_NAME=$0
 SCRIPT_DIR=$(cd $(dirname ${BASH_SOURCE[0]}); pwd)
 
 #Load common file
-source ${SCRIPT_DIR}/utils/_common.sh
+source ${SCRIPT_DIR}/core/common.sh
 
 #Load env file
 source ${SCRIPT_DIR}/config/config.sh
@@ -22,7 +22,7 @@ source ${SCRIPT_DIR}/config/set_config.sh
 set_contig
 
 #Load inventory 
-source ${SCRIPT_DIR}/utils/_gen_inventory_file.sh
+source ${SCRIPT_DIR}/core/gen_inventory_file.sh
 
 function ansible_script(){
     log_green "start change all application."
