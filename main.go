@@ -65,7 +65,7 @@ func main() {
 	case *config.Item == "command":
 		run(command.Files, command.Dirs, command.Extra)
 	case *config.Item == "grpc":
-		run(grpc.Files, grpc.Dirs, grpc.Extra)
+		run(grpc.GetFiles(), grpc.Dirs, grpc.Extra)
 	case *config.Item == "":
 		flag.PrintDefaults()
 	default:
