@@ -21,7 +21,7 @@ Use `./cheetah --help` to view help
 | --- | --- | --- | --- |
 | **Golang** Gin-based MVC Framework | `cheetah -i mvc` | [Project Structure](./docs/mvc.md) | [Demo Link](https://github.com/go-cheetah/mvc-demo) |
 | **Golang** Simple Functions | `cheetah -i simple` | [Project Structure](./docs/simple.md) | Not Created Yet |
-| **Golang** Simple HTTP | `cheetah -i simplehttp` | [Project Structure](./docs/http.md) | Not Created Yet |
+| **Golang** Simple HTTP | `cheetah -i http` | [Project Structure](./docs/http.md) | Not Created Yet |
 | **Golang** Simple grpc-go | `cheetah -i grpc` | [Project Structure](./docs/grpc.md) | Not Created Yet |
 | **Golang** Command Line Approach | `cheetah -i command` | [Project Structure](./docs/command.md) | Not Created Yet |
 | **Ansible** Based on Shell | `cheetah -i ansible` | [Project Structure](./docs/ansible.md) | Not Created Yet |
