@@ -46,6 +46,14 @@ curl -o cheetah ${release_package}
 > github: https://github.com/go-cheetah/cheetah.git  
 > gitee: https://gitee.com/agocan/code-generator.git  
 
+## 欢迎提 Issue
+
+感谢您使用 Cheetah 生成代码脚手架！如果在使用过程中遇到任何问题，或者有改进建议，欢迎在 [Issues](https://github.com/go-cheetah/cheetah/issues) 中提交问题。我们会尽快处理并回复。
+
+请提供详细的错误信息或功能需求，以便我们更好地帮助您。
+
+感谢您的支持与反馈！
+
 ## 许可证
 
 本项目采用 MIT 许可证，详情请查看 [LICENSE](LICENSE) 文件。

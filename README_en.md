@@ -45,6 +45,14 @@ curl -o cheetah ${release_package}
 > github: https://github.com/go-cheetah/cheetah.git  
 > gitee: https://gitee.com/agocan/code-generator.git  
 
+## Welcome to Open an Issue
+
+Thank you for using Cheetah, the code generation scaffold! If you encounter any issues or have suggestions for improvements, feel free to open an issue in the [Issues](https://github.com/go-cheetah/cheetah/issues) section. We’ll review and respond as soon as possible.
+
+Please provide detailed error messages or feature requests to help us assist you better.
+
+Thanks for your support and feedback!
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
