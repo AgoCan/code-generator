@@ -19,14 +19,14 @@ Use `./cheetah --help` to view help
 
 | Feature | Command Example | Description | Demo |
 | --- | --- | --- | --- |
-| **Golang** Gin-based MVC Framework | `cheetah -i mvcgorm` | [Project Structure](./docs/mvc.md) | [Demo Link](https://github.com/go-cheetah/mvc-demo) |
-| **Ansible** Based on Shell | `cheetah -i ansible` | [Project Structure](./docs/ansible.md) | Not Created Yet |
-| **Golang** Command Line Approach | `cheetah -i command` | [Project Structure](./docs/command.md) | Not Created Yet |
-| **GitBook** Documentation Framework | `cheetah -i gitbook` | [Project Structure](./docs/gitbook.md) | Not Created Yet |
-| **mdBook** Documentation Framework | `cheetah -i mdbook` | [Project Structure](./docs/mdbook.md) | Not Created Yet |
+| **Golang** Gin-based MVC Framework | `cheetah -i mvc` | [Project Structure](./docs/mvc.md) | [Demo Link](https://github.com/go-cheetah/mvc-demo) |
 | **Golang** Simple Functions | `cheetah -i simple` | [Project Structure](./docs/simple.md) | Not Created Yet |
-| **Golang** Simple HTTP Framework | `cheetah -i simplehttp` | [Project Structure](./docs/http.md) | Not Created Yet |
-
+| **Golang** Simple HTTP | `cheetah -i simplehttp` | [Project Structure](./docs/http.md) | Not Created Yet |
+| **Golang** Simple grpc-go | `cheetah -i grpc` | [Project Structure](./docs/grpc.md) | Not Created Yet |
+| **Golang** Command Line Approach | `cheetah -i command` | [Project Structure](./docs/command.md) | Not Created Yet |
+| **Ansible** Based on Shell | `cheetah -i ansible` | [Project Structure](./docs/ansible.md) | Not Created Yet |
+| **Documentation** gitbook | `cheetah -i gitbook` | [Project Structure](./docs/gitbook.md) | Not Created Yet |
+| **Documentation** mdbook | `cheetah -i mdbook` | [Project Structure](./docs/mdbook.md) | Not Created Yet |
 
 ### guide
 

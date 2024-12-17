@@ -20,7 +20,7 @@
 
 |功能|示例|介绍|demo|
 |---|---|---|---|
-|【golang】基于gin的mvc框架|`cheetah -i mvcgorm`|[项目结构](./docs/mvc.md)|[demo地址](https://github.com/go-cheetah/mvc-demo)|
+|【golang】基于gin的mvc框架|`cheetah -i mvc`|[项目结构](./docs/mvc.md)|[demo地址](https://github.com/go-cheetah/mvc-demo)|
 |【golang】简单函数|`cheetah -i simple`|[项目结构](./docs/simple.md)|暂未创建|
 |【golang】简单http|`cheetah -i simplehttp`|[项目结构](./docs/http.md)|暂未创建|
 |【golang】简单grpc-go|`cheetah -i grpc`|[项目结构](./docs/grpc-go.md)|暂未创建|
