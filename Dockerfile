@@ -1,12 +1,9 @@
-FROM golang:1.18.3 as builder
-ENV GOPROXY="https://goproxy.io"
-ENV GOPATH=$HOME/go
-ENV GOBIN=$HOME/go/bin
-ENV PATH=$PATH:$GOPATH/bin
-COPY . /app/
-# 下载指定的包，go.mod已经记录，可以直接使用
-RUN cd /app && go build -o ansible-scripts-generator .
+FROM golang:1.23.4 as builder
 
-FROM debian:10.11
-COPY --from=builder /app/ansible-scripts-generator /app/ansible-scripts-generator
-ENTRYPOINT ["/app/ansible-scripts-generator"]
+WORKDIR /app
+COPY . .
+RUN CGO_ENABLED=0 GOOS=linux go build -ldflags "-X 'main.Version=0.0.6'" -o output/cheetah
+
+FROM debian:bullseye-slim
+COPY --from=builder /app/output/cheetah /cheetah
+ENTRYPOINT ["/cheetah"]
