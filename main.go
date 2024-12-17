@@ -60,8 +60,8 @@ func main() {
 		run(simple.Files, simple.Dirs, simple.Extra)
 	case *config.Item == "http":
 		run(http.Files, http.Dirs, http.Extra)
-	case *config.Item == "mvcgorm":
-		run(mvc.GormFiles, mvc.GormDirs, mvc.GormExtra)
+	case *config.Item == "mvc":
+		run(mvc.GetFiles(), mvc.GormDirs, mvc.GormExtra)
 	case *config.Item == "command":
 		run(command.GetFiles(), command.Dirs, command.Extra)
 	case *config.Item == "grpc":
