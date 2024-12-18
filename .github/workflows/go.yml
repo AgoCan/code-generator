@@ -28,11 +28,15 @@ jobs:
     - name: Determine Image Tag
       id: image_tag
       run: |
-        # Check if it's a tag or branch, and set the image tag accordingly
+        # Check if it's a branch or tag, and set the image tag accordingly
         if [[ "${GITHUB_REF}" == "refs/heads/main" ]]; then
-          echo "IMAGE_TAG=latest" >> $GITHUB_ENV
+          echo "IMAGE_TAG=latest" >> $GITHUB_ENV  # main 分支使用 latest 标签
         elif [[ "${GITHUB_REF}" == refs/tags/* ]]; then
-          IMAGE_TAG=${GITHUB_REF#refs/tags/}
+          IMAGE_TAG=${GITHUB_REF#refs/tags/}  # 如果是标签，则使用标签名
+          echo "IMAGE_TAG=${IMAGE_TAG}" >> $GITHUB_ENV
+        else
+          # 如果是其他分支，使用分支名作为标签
+          IMAGE_TAG=${GITHUB_REF#refs/heads/}
           echo "IMAGE_TAG=${IMAGE_TAG}" >> $GITHUB_ENV
         fi
         echo "Using image tag: $IMAGE_TAG"
