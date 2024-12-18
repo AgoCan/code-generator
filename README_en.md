@@ -30,6 +30,8 @@ Use `./cheetah --help` to view help
 
 ### guide
 
+binary
+
 ```bash
 apt-get update 
 apt-get install curl -y
@@ -38,6 +40,19 @@ version=0.0.5
 release_package=https://github.com/go-cheetah/cheetah/releases/download/${version}/cheetah-linux-amd64
 curl -o cheetah ${release_package}
 ./cheetah -h
+```
+
+docker
+
+```bash
+docker pull gocheetah/cheetah
+
+your_pro_path=/tmp/demo
+docker run -it --rm -v ${your_pro_path}:/demo gocheetah/cheetah -i mvc
+
+your_pro_path=/tmp/test
+your_project_name=test
+docker run -it --rm -v ${your_pro_path}:/${your_project_name} gocheetah/cheetah -i mvc -n $your_project_name
 ```
 
 ## Gitee and GitHub Repository Links
