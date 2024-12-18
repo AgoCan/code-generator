@@ -1,5 +1,8 @@
 # Cheetah - Go Scaffold Tool
 
+![logo](logo/logo.png)
+
+---
 [中文简体](README.md)
 ---
 

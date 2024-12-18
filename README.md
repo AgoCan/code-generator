@@ -1,6 +1,9 @@
 
 # Cheetah - Go脚手架工具
 
+![logo](logo/logo.png)
+
+---
 [English](README_en.md)
 ---
 
