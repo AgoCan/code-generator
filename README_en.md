@@ -36,13 +36,8 @@ Use `./cheetah --help` to view help
 binary
 
 ```bash
-apt-get update 
-apt-get install curl -y
-# linux x86
-version=0.0.5
-release_package=https://github.com/go-cheetah/cheetah/releases/download/${version}/cheetah-linux-amd64
-curl -o cheetah ${release_package}
-./cheetah -h
+# linux
+curl -sSL https://raw.githubusercontent.com/go-cheetah/cheetah/refs/heads/main/install.sh | bash
 ```
 
 docker
